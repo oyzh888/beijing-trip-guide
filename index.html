@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>北京周边亲子出行攻略</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: #f5f7fa;
+      color: #2c3e50;
+    }
+    /* ===== HEADER ===== */
+    .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-align: center;
+      padding: 60px 20px 50px;
+    }
+    .hero h1 { font-size: 2.4rem; margin-bottom: 10px; letter-spacing: 2px; }
+    .hero p  { font-size: 1.05rem; opacity: .85; margin-top: 8px; }
+    .hero .meta { margin-top: 18px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+    .hero .meta span {
+      background: rgba(255,255,255,.18);
+      border-radius: 20px;
+      padding: 6px 18px;
+      font-size: .9rem;
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;
+      background: white;
+      padding: 14px 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.07);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav a {
+      text-decoration: none;
+      color: #764ba2;
+      font-weight: 600;
+      font-size: .92rem;
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1.5px solid #764ba2;
+      transition: all .2s;
+    }
+    .nav a:hover { background: #764ba2; color: white; }
+
+    /* ===== DESTINATION CARD ===== */
+    .destination {
+      max-width: 960px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,.09);
+    }
+    .dest-header {
+      padding: 28px 32px 20px;
+      border-left: 6px solid var(--accent);
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+    .dest-num {
+      font-size: 2.6rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+      min-width: 48px;
+    }
+    .dest-info h2 { font-size: 1.6rem; margin-bottom: 4px; }
+    .dest-info .drive {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: .82rem;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 12px;
+      margin-top: 6px;
+    }
+
+    /* ===== GRID ===== */
+    .grid-9 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      padding: 0 0 4px;
+    }
+    .grid-9 .img-wrap {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: #e8ecf0;
+    }
+    .grid-9 .img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .35s;
+    }
+    .grid-9 .img-wrap:hover img { transform: scale(1.06); }
+    .grid-9 .img-wrap .label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.55));
+      color: white;
+      font-size: .72rem;
+      padding: 14px 8px 6px;
+      text-align: center;
+    }
+
+    /* ===== SECTIONS ===== */
+    .sections { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .section {
+      padding: 24px 28px;
+    }
+    .section:first-child { border-right: 1px solid #f0f0f0; }
+    .section h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section h3 .icon {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      background: var(--accent-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
+    }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #f4f4f8;
+      border-radius: 10px;
+      padding: 5px 12px;
+      font-size: .82rem;
+      color: #555;
+      line-height: 1.4;
+    }
+    .tag.baby {
+      background: #fff0f6;
+      color: #c2185b;
+    }
+
+    /* ===== COLORS PER DESTINATION ===== */
+    #dest1 { --accent: #e67e22; --accent-light: #fef3e2; }
+    #dest2 { --accent: #27ae60; --accent-light: #e8f8f0; }
+    #dest3 { --accent: #2980b9; --accent-light: #e8f4fd; }
+    #dest4 { --accent: #8e44ad; --accent-light: #f5eef8; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #aaa;
+      font-size: .85rem;
+    }
+
+    @media (max-width: 600px) {
+      .dest-header { flex-direction: column; gap: 8px; }
+      .sections { grid-template-columns: 1fr; }
+      .section:first-child { border-right: none; border-bottom: 1px solid #f0f0f0; }
+      .hero h1 { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>🌿 北京周边亲子出行攻略</h1>
+  <p>四大备选地点 · 游玩项目 · 母婴配套全览</p>
+  <div class="meta">
+    <span>📅 下周出行</span>
+    <span>👶 亲子友好</span>
+    <span>🚗 自驾出发</span>
+    <span>📍 4个备选目的地</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#dest1">① 圣露庄园</a>
+  <a href="#dest2">② 玉渡山</a>
+  <a href="#dest3">③ 雁栖湖</a>
+  <a href="#dest4">④ 金海湖</a>
+</nav>
+
+
+<!-- ===== DESTINATION 1 ===== -->
+<div class="destination" id="dest1">
+  <div class="dest-header">
+    <div class="dest-num">01</div>
+    <div class="dest-info">
+      <h2>顺义 · 圣露庄园</h2>
+      <p style="color:#777;font-size:.9rem;margin-top:4px">欧式庄园 · 葡萄酒文化 · 亲子萌宠乐园</p>
+      <span class="drive">🚗 车程约 50 分钟</span>
+    </div>
+  </div>
+
+  <!-- 九宫格 -->
+  <div class="grid-9">
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/450392a26fc1bc2acf6c721bd8339b70c5.jpg" alt="圣露庄园航拍全景"/>
+      <div class="label">庄园航拍全景</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/e0ddbc1ecfc07d22c1c1236174631d61c5.jpg" alt="庄园湖面夏景"/>
+      <div class="label">湖面大草坪</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/9cf2068d672fec67928cbc0e8ea5075ac5.jpg" alt="草坪湖边"/>
+      <div class="label">湖边骑行打卡</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/b45c602ffd10709a5e3093d16bf08abdc5.jpg" alt="葡萄园"/>
+      <div class="label">葡萄园采摘</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/b3ffb1980eeef18b2f63a3e286304702c5.jpg" alt="湖边木屋"/>
+      <div class="label">湖边恒温木屋</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/56299f3daef850f08f160232411c0bdcc5.jpg" alt="湖边穹顶"/>
+      <div class="label">天幕野餐区</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/0c4982f2b44c6b909649b44521e74b78c5.jpg" alt="草坪椅"/>
+      <div class="label">草坪休闲区</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/298328b52e0b2117cedd86e852d364ccc5.jpg" alt="庄园湖景"/>
+      <div class="label">环湖小火车沿线</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/1dfe9828ded254ba708d1a67c6bdd34fc5.jpg" alt="品酒室"/>
+      <div class="label">红酒品鉴室</div>
+    </div>
+  </div>
+
+  <div class="sections">
+    <div class="section">
+      <h3><span class="icon">🎯</span> 游玩项目</h3>
+      <div class="tag-list">
+        <span class="tag">🥏 大草坪飞盘</span>
+        <span class="tag">🪁 放风筝</span>
+        <span class="tag">🏰 欧式城堡打卡</span>
+        <span class="tag">🍇 葡萄采摘</span>
+        <span class="tag">🍷 红酒品鉴</span>
+        <span class="tag">🏕️ 湖边天幕野餐</span>
+        <span class="tag">🚂 环湖小火车</span>
+        <span class="tag">🍖 自助烤全羊</span>
+        <span class="tag">🎬 草坪露天电影</span>
+      </div>
+    </div>
+    <div class="section">
+      <h3><span class="icon">👶</span> 母婴配套</h3>
+      <div class="tag-list">
+        <span class="tag baby">🛺 全园平缓塑胶路，婴儿车畅行</span>
+        <span class="tag baby">🏠 室内恒温木屋 + 专属母婴室</span>
+        <span class="tag baby">🦙 萌宠互动（小羊/小鹿/羊驼）</span>
+        <span class="tag baby">🏖️ 无动力乐园（沙坑/滑梯/蹦床）</span>
+        <span class="tag baby">🌳 树荫充足，随时避烟休息</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== DESTINATION 2 ===== -->
+<div class="destination" id="dest2">
+  <div class="dest-header">
+    <div class="dest-num">02</div>
+    <div class="dest-info">
+      <h2>延庆 · 玉渡山</h2>
+      <p style="color:#777;font-size:.9rem;margin-top:4px">高山草甸 · 林间溪流 · 忘忧湖木栈道</p>
+      <span class="drive">🚗 车程约 1 小时 10 分钟</span>
+    </div>
+  </div>
+
+  <div class="grid-9">
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/9c1f43ca7d97d610214856aff2e4251f.png" alt="盘山公路"/>
+      <div class="label">进山公路</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/d86728e96d8edd9c13751ca906ee6961.png" alt="高山草坪"/>
+      <div class="label">高山大草坪</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/ae3861d2ef24af185e321cf058893bd8.png" alt="草坪活动"/>
+      <div class="label">草坪野餐</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/32ba313c110497a61266e130010d8a66.png" alt="忘忧湖"/>
+      <div class="label">忘忧湖</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/d3d54a59fd3eb0da521e06df0b3beea4.png" alt="忘忧湖景色"/>
+      <div class="label">湖畔漫步</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/54f2bd1222b8b1480b9d6ecf96817273.png" alt="游船"/>
+      <div class="label">湖面脚踏船</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/b5e35cc31b4e6d2d2ad150ec4f2b2380.png" alt="林荫溪水瀑布"/>
+      <div class="label">溪流瀑布</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/dc174b2205e2a715f270e8afe5681330.png" alt="林间步道"/>
+      <div class="label">林间步道</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/9b61eca5be48e16410303e898dba83b5.png" alt="溪流"/>
+      <div class="label">浅溪踩水</div>
+    </div>
+  </div>
+
+  <div class="sections">
+    <div class="section">
+      <h3><span class="icon">🎯</span> 游玩项目</h3>
+      <div class="tag-list">
+        <span class="tag">🌾 高山草甸野餐</span>
+        <span class="tag">💧 林间浅溪踩水</span>
+        <span class="tag">🚶 忘忧湖环湖木栈道</span>
+        <span class="tag">🥾 平缓休闲徒步</span>
+        <span class="tag">🌊 瀑布纳凉</span>
+        <span class="tag">🥏 草坪飞盘</span>
+        <span class="tag">📸 山野拍照</span>
+        <span class="tag">⛵ 湖边脚踏船</span>
+        <span class="tag">🎲 林间桌游</span>
+      </div>
+    </div>
+    <div class="section">
+      <h3><span class="icon">👶</span> 母婴配套</h3>
+      <div class="tag-list">
+        <span class="tag baby">🌲 全程树荫避暑，步道无陡坡</span>
+        <span class="tag baby">🏛️ 游客中心母婴室</span>
+        <span class="tag baby">💤 大片平坦草坪可铺垫哄睡</span>
+        <span class="tag baby">🌊 溪流浅滩安全平缓，蚊虫少</span>
+        <span class="tag baby">🔇 工作日游客极少，环境安静</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== DESTINATION 3 ===== -->
+<div class="destination" id="dest3">
+  <div class="dest-header">
+    <div class="dest-num">03</div>
+    <div class="dest-info">
+      <h2>怀柔 · 雁栖湖</h2>
+      <p style="color:#777;font-size:.9rem;margin-top:4px">APEC 地标 · 画舫游船 · 13km 环湖慢行</p>
+      <span class="drive">🚗 车程约 1 小时 20 分钟</span>
+    </div>
+  </div>
+
+  <div class="grid-9">
+    <div class="img-wrap">
+      <img src="https://r1.visitbeijing.com.cn/vbj-s/2019/0619/20190619021930705.jpg" alt="雁栖湖全景"/>
+      <div class="label">俯瞰雁栖湖</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://r1.visitbeijing.com.cn/vbj-s/2017/1110/20171110123258881.jpg" alt="湖景"/>
+      <div class="label">湖面山水</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://r1.visitbeijing.com.cn/vbj-s/2017/1110/20171110123229750.jpg" alt="环湖步道"/>
+      <div class="label">环湖步道</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://r1.visitbeijing.com.cn/vbj-s/2017/1110/20171110123245861.jpg" alt="湖岸风光"/>
+      <div class="label">湖岸风光</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://r1.visitbeijing.com.cn/vbj-s/2015/0512/20150512051539786.png" alt="APEC会场"/>
+      <div class="label">APEC 日出东方</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://r1.visitbeijing.com.cn/vbj-s/2015/0512/20150512051544243.png" alt="核心岛"/>
+      <div class="label">核心岛鸟瞰</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://r1.visitbeijing.com.cn/vbj-s/2015/0512/20150512051546242.png" alt="会议中心"/>
+      <div class="label">地标建筑</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/331d2e3d2351519bf3a5ae03ac832d21u5.jpg" alt="日出东方大酒店"/>
+      <div class="label">APEC 日出东方打卡</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/bb31858fad2ca0e1b47fdaed9262a242u5.jpg" alt="雁栖湖秋色"/>
+      <div class="label">湖畔四季美景</div>
+    </div>
+  </div>
+
+  <div class="sections">
+    <div class="section">
+      <h3><span class="icon">🎯</span> 游玩项目</h3>
+      <div class="tag-list">
+        <span class="tag">🚴 环湖骑行</span>
+        <span class="tag">🛥️ 画舫游船</span>
+        <span class="tag">🛶 皮划艇 / 龙舟</span>
+        <span class="tag">🏔️ 西山观景步道</span>
+        <span class="tag">☕ 湖畔下午茶</span>
+        <span class="tag">🏛️ APEC 地标打卡</span>
+        <span class="tag">🥌 旱地冰壶</span>
+        <span class="tag">🎮 草坪趣味小游戏</span>
+      </div>
+    </div>
+    <div class="section">
+      <h3><span class="icon">👶</span> 母婴配套</h3>
+      <div class="tag-list">
+        <span class="tag baby">♿ 环湖全程无障碍平路</span>
+        <span class="tag baby">🚌 观光电瓶车随上随下</span>
+        <span class="tag baby">🪑 多处临水遮阳长椅</span>
+        <span class="tag baby">🍽️ 室内餐厅可安抚休息</span>
+        <span class="tag baby">🌬️ 湖面风温柔和，休息点位密集</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== DESTINATION 4 ===== -->
+<div class="destination" id="dest4">
+  <div class="dest-header">
+    <div class="dest-num">04</div>
+    <div class="dest-info">
+      <h2>平谷 · 金海湖</h2>
+      <p style="color:#777;font-size:.9rem;margin-top:4px">京郊最大水面 · 碧波岛打卡 · 湖鲜美食</p>
+      <span class="drive">🚗 车程约 1 小时 50 分钟</span>
+    </div>
+  </div>
+
+  <div class="grid-9">
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/c9ff126c8c7958b5e34a1c4994bb930c.png" alt="碧波岛"/>
+      <div class="label">碧波岛全景</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/3f3c12839f9d27a01890ad58f90848f7.png" alt="锯齿崖"/>
+      <div class="label">锯齿崖山地</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/48b1b830549a655d3b8d00cb080685d3.png" alt="游船"/>
+      <div class="label">双层环湖游船</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/798d4e31290b52a23e10240e9dffc783.png" alt="帆船"/>
+      <div class="label">帆船</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/f919972454acba5b1f3a9fd8c7eb6f5f.png" alt="快艇"/>
+      <div class="label">皮划艇 / 快艇</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/8f3aaab9b748d4433639531bf8f97293.png" alt="脚踏船"/>
+      <div class="label">亲子电瓶船</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/5b36aea0aa5d3a7e83d81d09a644e788.png" alt="农家菜"/>
+      <div class="label">湖鲜正餐</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/4a9f26fced3a2bba82f09182515ae93c.png" alt="帐篷民宿"/>
+      <div class="label">天幕围炉</div>
+    </div>
+    <div class="img-wrap">
+      <img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/4537ab3ae56b81b8011b3d233d51afbc.png" alt="草坪"/>
+      <div class="label">湖畔大草坪</div>
+    </div>
+  </div>
+
+  <div class="sections">
+    <div class="section">
+      <h3><span class="icon">🎯</span> 游玩项目</h3>
+      <div class="tag-list">
+        <span class="tag">🚢 双层环湖游船</span>
+        <span class="tag">🏝️ 登碧波岛打卡</span>
+        <span class="tag">🏄 桨板 / 皮划艇</span>
+        <span class="tag">🚴 环湖骑行</span>
+        <span class="tag">🛷 山地滑车</span>
+        <span class="tag">🥏 大草坪飞盘</span>
+        <span class="tag">🎣 湖边垂钓</span>
+        <span class="tag">🧭 定向寻宝</span>
+        <span class="tag">🫖 天幕围炉煮茶</span>
+        <span class="tag">🐟 湖畔农家湖鲜</span>
+      </div>
+    </div>
+    <div class="section">
+      <h3><span class="icon">👶</span> 母婴配套</h3>
+      <div class="tag-list">
+        <span class="tag baby">🏛️ 游客中心标准母婴室</span>
+        <span class="tag baby">🛣️ 全沥青平缓环湖路</span>
+        <span class="tag baby">🚌 免费摆渡车省力</span>
+        <span class="tag baby">🌳 大面积遮阳草坪</span>
+        <span class="tag baby">🎟️ 1.2m 以下婴儿免票</span>
+        <span class="tag baby">🐾 萌宠长廊，无陡峭台阶</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>📸 图片来源：北京市文旅局官网 visitbeijing.com.cn &nbsp;|&nbsp; 仅供参考，实际以景区现场为准</p>
+  <p style="margin-top:8px">祝出行愉快！🎉</p>
+</footer>
+
+</body>
+</html>
