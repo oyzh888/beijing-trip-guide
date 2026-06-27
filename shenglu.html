@@ -3,525 +3,579 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>圣露庄园一日游 · 7月1日 · 5–10人详细攻略</title>
+<title>圣露庄园一日游 · 7月1日 · 5月龄宝宝版</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:#fafaf8;color:#2c3e50;line-height:1.6}
 
-/* HERO */
-.hero{background:linear-gradient(150deg,#e67e22 0%,#d35400 60%,#c0392b 100%);color:#fff;padding:52px 20px 40px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:"🍇";position:absolute;font-size:120px;opacity:.08;right:-10px;top:-20px}
-.hero::after{content:"🌿";position:absolute;font-size:100px;opacity:.08;left:-10px;bottom:-20px}
-.hero h1{font-size:2rem;letter-spacing:2px;margin-bottom:6px}
-.hero .sub{font-size:.95rem;opacity:.88;margin-top:6px}
-.hero .tags{margin-top:16px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-.hero .tags span{background:rgba(255,255,255,.2);border-radius:20px;padding:5px 14px;font-size:.82rem}
+.hero{background:linear-gradient(150deg,#e67e22,#d35400 60%,#c0392b);color:#fff;padding:52px 20px 40px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:"🍇";position:absolute;font-size:110px;opacity:.08;right:-10px;top:-20px}
+.hero h1{font-size:1.95rem;letter-spacing:2px;margin-bottom:6px}
+.hero .sub{font-size:.92rem;opacity:.88;margin-top:6px}
+.hero .tags{margin-top:16px;display:flex;justify-content:center;gap:9px;flex-wrap:wrap}
+.hero .tags span{background:rgba(255,255,255,.2);border-radius:20px;padding:5px 13px;font-size:.81rem}
 
-/* 导航 */
-nav{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.07);padding:10px 16px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap;position:sticky;top:0;z-index:100}
-nav a{text-decoration:none;color:#e67e22;font-weight:600;font-size:.82rem;padding:4px 12px;border-radius:16px;border:1.5px solid #e67e22;transition:all .2s}
+nav{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.07);padding:10px 14px;display:flex;justify-content:center;gap:7px;flex-wrap:wrap;position:sticky;top:0;z-index:100}
+nav a{text-decoration:none;color:#e67e22;font-weight:600;font-size:.8rem;padding:4px 11px;border-radius:16px;border:1.5px solid #e67e22;transition:all .2s}
 nav a:hover{background:#e67e22;color:#fff}
 
 .wrap{max-width:900px;margin:0 auto;padding:0 16px}
 
-/* 信息卡片区 */
-.info-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0 0}
-.info-card{background:#fff;border-radius:14px;padding:18px 16px;box-shadow:0 3px 14px rgba(0,0,0,.07);border-top:4px solid var(--c)}
-.info-card .ic{font-size:1.6rem;margin-bottom:8px}
-.info-card h3{font-size:.88rem;font-weight:700;color:#444;margin-bottom:6px}
-.info-card p{font-size:.8rem;color:#666;line-height:1.6}
-.info-card .val{font-size:1rem;font-weight:700;color:var(--c);margin-bottom:4px}
+/* 宝宝须知卡 */
+.baby-alert{background:linear-gradient(135deg,#fce4ec,#f8bbd0);border-radius:16px;padding:20px 22px;margin-top:26px;border-left:5px solid #e91e63}
+.baby-alert h2{font-size:.98rem;font-weight:700;color:#880e4f;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.baby-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.baby-item{background:rgba(255,255,255,.7);border-radius:10px;padding:12px 14px}
+.baby-item h4{font-size:.82rem;font-weight:700;color:#c2185b;margin-bottom:7px;display:flex;align-items:center;gap:5px}
+.baby-item ul{list-style:none;padding:0}
+.baby-item ul li{font-size:.78rem;color:#4a0026;padding:3px 0;display:flex;gap:5px;align-items:flex-start;line-height:1.5}
+.baby-item ul li::before{content:"·";color:#e91e63;font-weight:bold;flex-shrink:0}
 
-/* 交通方案 */
-.section{background:#fff;border-radius:16px;padding:24px;box-shadow:0 3px 14px rgba(0,0,0,.07);margin-top:20px}
-.section h2{font-size:1rem;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px;color:#2c3e50}
+/* 睡眠节律图 */
+.rhythm-section{background:#fff;border-radius:16px;padding:22px;box-shadow:0 3px 14px rgba(0,0,0,.07);margin-top:18px}
+.rhythm-section h2{font-size:.98rem;font-weight:700;margin-bottom:16px;color:#2c3e50;display:flex;align-items:center;gap:8px}
+.rhythm-section h2 .dot{width:8px;height:8px;border-radius:50%;background:#e67e22;flex-shrink:0}
+.rhythm-row{display:flex;align-items:center;gap:0;margin-bottom:8px}
+.rr-time{width:74px;font-size:.76rem;font-weight:700;color:#e67e22;flex-shrink:0;text-align:right;padding-right:10px}
+.rr-bar-wrap{flex:1;display:flex;align-items:center;gap:8px}
+.rr-bar{height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.73rem;font-weight:600;white-space:nowrap;padding:0 10px;min-width:60px}
+.bar-sleep{background:#c8e6c9;color:#1b5e20}
+.bar-awake{background:#fff3e0;color:#e65100}
+.bar-feed{background:#fce4ec;color:#880e4f}
+.bar-car{background:#e3f2fd;color:#1565c0}
+.rr-note{font-size:.72rem;color:#999;margin-left:8px}
+.rhythm-tip{background:#f8f9ff;border-radius:10px;padding:12px 14px;margin-top:12px;font-size:.79rem;color:#555;line-height:1.7}
+.rhythm-tip b{color:#e67e22}
+
+/* section 通用 */
+.section{background:#fff;border-radius:16px;padding:22px;box-shadow:0 3px 14px rgba(0,0,0,.07);margin-top:18px}
+.section h2{font-size:.98rem;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px;color:#2c3e50}
 .section h2 .dot{width:8px;height:8px;border-radius:50%;background:#e67e22;flex-shrink:0}
 
-.transport-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.t-card{border-radius:12px;padding:16px;border:2px solid #eee}
+/* 交通 */
+.transport-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.t-card{border-radius:12px;padding:15px;border:2px solid #eee}
 .t-card.rec{border-color:#27ae60;background:#f0faf4}
-.t-card .t-title{font-size:.9rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:7px}
-.t-rec-badge{background:#27ae60;color:#fff;font-size:.68rem;border-radius:6px;padding:1px 7px}
-.t-row{display:flex;gap:8px;font-size:.8rem;margin-bottom:5px;align-items:flex-start}
-.t-lbl{font-weight:700;color:#555;min-width:58px;flex-shrink:0}
-.t-val{color:#333}
-.t-pro{font-size:.77rem;color:#27ae60;margin-top:3px}
-.t-con{font-size:.77rem;color:#e53935;margin-top:2px}
-.t-divider{border:none;border-top:1px dashed #ddd;margin:8px 0}
-.group-table{width:100%;border-collapse:collapse;font-size:.8rem;margin-top:12px}
-.group-table th{background:#fff8f0;padding:8px 10px;text-align:left;font-weight:700;border-bottom:2px solid #f0e0d0}
-.group-table td{padding:8px 10px;border-bottom:1px solid #f5f5f5}
+.t-title{font-size:.88rem;font-weight:700;margin-bottom:9px;display:flex;align-items:center;gap:7px}
+.t-rec-b{background:#27ae60;color:#fff;font-size:.67rem;border-radius:6px;padding:1px 7px}
+.t-row{display:flex;gap:7px;font-size:.79rem;margin-bottom:4px}
+.t-lbl{font-weight:700;color:#555;min-width:56px;flex-shrink:0}
+.t-pro{font-size:.76rem;color:#27ae60;margin-top:3px}
+.t-con{font-size:.76rem;color:#e53935;margin-top:2px}
+.t-div{border:none;border-top:1px dashed #ddd;margin:7px 0}
+.group-table{width:100%;border-collapse:collapse;font-size:.79rem;margin-top:12px}
+.group-table th{background:#fff8f0;padding:7px 9px;text-align:left;font-weight:700;border-bottom:2px solid #f0e0d0;color:#555}
+.group-table td{padding:7px 9px;border-bottom:1px solid #f5f5f5}
 .group-table tr:last-child td{border-bottom:none}
 
-/* 天气提示 */
-.weather-bar{background:linear-gradient(135deg,#fff8e1,#fff3cd);border-left:4px solid #f9a825;border-radius:0 12px 12px 0;padding:14px 18px;margin-top:16px;font-size:.83rem;color:#5d4037;line-height:1.8}
-.weather-bar b{color:#e65100}
-
-/* 行前清单 */
-.checklist-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:4px}
-.cl-group h4{font-size:.83rem;font-weight:700;color:#e67e22;margin-bottom:8px;display:flex;align-items:center;gap:5px}
-.cl-group ul{list-style:none;padding:0}
-.cl-group ul li{font-size:.79rem;color:#555;padding:3px 0;display:flex;align-items:flex-start;gap:5px}
-.cl-group ul li::before{content:"☐";color:#e67e22;flex-shrink:0;margin-top:1px}
-
 /* 时间轴 */
-.timeline-wrap{margin-top:4px}
-.block-label{font-size:.78rem;font-weight:700;letter-spacing:1px;color:#fff;background:var(--bc);border-radius:8px;padding:4px 14px;display:inline-block;margin:16px 0 10px}
+.tl{display:flex;flex-direction:column}
 .tli{display:flex;align-items:stretch;margin-bottom:2px}
-.tli-left{width:90px;min-width:90px;font-size:.74rem;font-weight:700;color:#e67e22;text-align:right;padding:8px 10px 8px 0;white-space:nowrap}
+.tli-left{width:88px;min-width:88px;font-size:.73rem;font-weight:700;color:#e67e22;text-align:right;padding:8px 9px 8px 0;white-space:nowrap}
 .tli-mid{display:flex;flex-direction:column;align-items:center;width:18px;min-width:18px}
-.tli-dot{width:9px;height:9px;border-radius:50%;background:#e67e22;margin-top:10px;flex-shrink:0}
-.tli-line{width:2px;background:#f0d8c0;flex:1;margin:2px 0}
+.tli-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:10px}
+.tli-line{width:2px;flex:1;margin:2px 0}
 .tli:last-child .tli-line{display:none}
 .tli-right{padding:5px 0 10px 10px;flex:1}
-.tli-title{font-size:.88rem;font-weight:700;color:#2c3e50;display:flex;align-items:center;gap:6px}
-.tli-desc{font-size:.77rem;color:#777;margin-top:3px;line-height:1.55}
-.tli-detail{background:#fff8f2;border-radius:8px;padding:8px 12px;margin-top:6px;font-size:.76rem;color:#555;line-height:1.6}
-.tli-detail b{color:#e67e22}
-.tli-tip{display:inline-block;background:#fef3e2;color:#e67e22;font-size:.7rem;border-radius:6px;padding:1px 8px;margin-top:4px}
-.tli-warn{display:inline-block;background:#fff3e0;color:#e65100;font-size:.7rem;border-radius:6px;padding:1px 8px;margin-top:4px}
-.tli-rain{display:inline-block;background:#e3f2fd;color:#1565c0;font-size:.7rem;border-radius:6px;padding:1px 8px;margin-top:4px}
+.tli-title{font-size:.86rem;font-weight:700;color:#2c3e50;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.tli-desc{font-size:.76rem;color:#777;margin-top:3px;line-height:1.55}
+.tli-box{background:#f8f8f8;border-radius:8px;padding:8px 11px;margin-top:6px;font-size:.75rem;color:#555;line-height:1.6}
+.tli-box b{color:#e67e22}
+.tli-box.sleep{background:#f1f8e9;border-left:3px solid #66bb6a}
+.tli-box.feed{background:#fce4ec;border-left:3px solid #f48fb1}
+.tli-box.hot{background:#fff3e0;border-left:3px solid #ffa726}
+.pill{display:inline-block;font-size:.69rem;border-radius:12px;padding:1px 8px;margin-top:3px;margin-right:3px}
+.pill-sleep{background:#c8e6c9;color:#1b5e20}
+.pill-feed{background:#fce4ec;color:#880e4f}
+.pill-hot{background:#fff3e0;color:#e65100}
+.pill-ok{background:#e8f5e9;color:#2e7d32}
+.pill-rain{background:#e3f2fd;color:#1565c0}
+
+/* 时段颜色 */
+.block-tag{font-size:.76rem;font-weight:700;letter-spacing:.5px;color:#fff;border-radius:7px;padding:3px 13px;display:inline-block;margin:14px 0 8px}
+
+/* 清单 */
+.checklist-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cl-group h4{font-size:.82rem;font-weight:700;color:#e67e22;margin-bottom:7px;display:flex;align-items:center;gap:4px}
+.cl-group ul{list-style:none}
+.cl-group ul li{font-size:.78rem;color:#555;padding:3px 0;display:flex;gap:5px;align-items:flex-start}
+.cl-group ul li::before{content:"☐";color:#e67e22;flex-shrink:0;margin-top:1px}
+.cl-group ul li.warn{color:#e53935}
+.cl-group ul li.warn::before{content:"⚠️";font-size:.7rem}
 
 /* 餐饮 */
-.meal-card{background:#fff8f2;border-radius:12px;padding:14px 16px;margin-top:10px}
-.meal-card h4{font-size:.86rem;font-weight:700;color:#e67e22;margin-bottom:8px}
-.meal-rows{font-size:.79rem;color:#555;display:flex;flex-direction:column;gap:5px}
-.meal-row{display:flex;gap:8px}
-.meal-lbl{font-weight:700;min-width:54px;color:#444;flex-shrink:0}
+.meal-card{background:#fff8f2;border-radius:11px;padding:13px 15px;margin-top:10px}
+.meal-card h4{font-size:.84rem;font-weight:700;color:#e67e22;margin-bottom:7px}
+.meal-row{display:flex;gap:8px;font-size:.78rem;margin-bottom:4px}
+.meal-lbl{font-weight:700;min-width:52px;color:#444;flex-shrink:0}
 
-/* 雨天预案 */
-.rain-plan{background:#e8f4fd;border-radius:12px;padding:16px;margin-top:16px;border-left:4px solid #2196f3}
-.rain-plan h3{font-size:.88rem;font-weight:700;color:#1565c0;margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.rain-plan ul{list-style:none;padding:0}
-.rain-plan ul li{font-size:.79rem;color:#1e3a5f;padding:4px 0;display:flex;gap:7px}
-.rain-plan ul li::before{content:"🌧";flex-shrink:0}
+/* 雨天 */
+.rain-box{background:#e8f4fd;border-radius:12px;padding:15px;border-left:4px solid #2196f3;margin-top:12px}
+.rain-box h3{font-size:.86rem;font-weight:700;color:#1565c0;margin-bottom:9px}
+.rain-box ul{list-style:none}
+.rain-box ul li{font-size:.78rem;color:#1e3a5f;padding:4px 0;display:flex;gap:6px}
 
-/* 费用汇总 */
-.cost-table{width:100%;border-collapse:collapse;font-size:.81rem;margin-top:12px}
-.cost-table th{background:#fff8f0;padding:8px 10px;text-align:left;font-weight:700;border-bottom:2px solid #f0ddd0;color:#555}
-.cost-table td{padding:8px 10px;border-bottom:1px solid #f5f5f5}
+/* 费用 */
+.cost-table{width:100%;border-collapse:collapse;font-size:.8rem;margin-top:10px}
+.cost-table th{background:#fff8f0;padding:7px 9px;text-align:left;font-weight:700;border-bottom:2px solid #f0ddd0;color:#555}
+.cost-table td{padding:7px 9px;border-bottom:1px solid #f5f5f5}
 .cost-table .total{font-weight:700;background:#fef3e2;color:#e67e22}
-.cost-table .note{font-size:.7rem;color:#999}
+.note-sm{font-size:.7rem;color:#999}
 
-/* 预约提醒 */
-.booking-alert{background:linear-gradient(135deg,#fce4ec,#f8bbd9);border-radius:14px;padding:18px 20px;margin-top:20px}
-.booking-alert h3{font-size:.92rem;font-weight:700;color:#880e4f;margin-bottom:12px;display:flex;align-items:center;gap:7px}
-.booking-steps{display:flex;flex-direction:column;gap:8px}
-.booking-step{display:flex;gap:10px;font-size:.8rem;color:#4a0026;align-items:flex-start}
-.step-num{background:#e91e63;color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;flex-shrink:0;margin-top:1px}
+/* 预约 */
+.booking-box{background:linear-gradient(135deg,#fce4ec,#f8bbd0);border-radius:14px;padding:17px 20px;margin-top:18px}
+.booking-box h3{font-size:.9rem;font-weight:700;color:#880e4f;margin-bottom:11px;display:flex;align-items:center;gap:6px}
+.bsteps{display:flex;flex-direction:column;gap:7px}
+.bstep{display:flex;gap:9px;font-size:.79rem;color:#4a0026;align-items:flex-start}
+.bnum{background:#e91e63;color:#fff;width:21px;height:21px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;margin-top:1px}
 
-footer{text-align:center;padding:32px 20px;color:#aaa;font-size:.78rem;margin-top:8px}
+footer{text-align:center;padding:30px 20px;color:#aaa;font-size:.77rem;margin-top:8px}
 
 @media(max-width:640px){
-  .info-row{grid-template-columns:1fr 1fr}
-  .transport-grid{grid-template-columns:1fr}
-  .checklist-grid{grid-template-columns:1fr}
-  .hero h1{font-size:1.55rem}
+  .baby-grid,.transport-grid,.checklist-grid{grid-template-columns:1fr}
+  .hero h1{font-size:1.5rem}
+  .tli-left{width:72px;min-width:72px;font-size:.7rem}
 }
 </style>
 </head>
 <body>
 
 <div class="hero">
-  <h1>🏰 圣露庄园 精细一日游</h1>
-  <div class="sub">📍 朱辛庄出发 &nbsp;·&nbsp; 🗓️ 7 月 1 日（周三）&nbsp;·&nbsp; 👥 5–10 人</div>
+  <h1>🏰 圣露庄园 · 5月龄宝宝一日游</h1>
+  <div class="sub">📍 朱辛庄出发 &nbsp;·&nbsp; 🗓️ 7月1日（周三）&nbsp;·&nbsp; 👥 5–10人 &nbsp;·&nbsp; 👶 宝宝约5个月</div>
   <div class="tags">
-    <span>🌡️ 当日预报 30°C</span>
+    <span>🌡️ 当日约30°C</span>
     <span>🌦️ 午后雷阵雨可能</span>
-    <span>📅 工作日·人少</span>
-    <span>⏰ 09:00–18:00 开园</span>
+    <span>😴 宝宝主导节奏</span>
+    <span>✅ 以宝宝睡眠为轴重排</span>
   </div>
 </div>
 
 <nav>
+  <a href="#baby-notes">宝宝须知</a>
+  <a href="#rhythm">睡眠节律</a>
   <a href="#transport">交通方案</a>
   <a href="#checklist">行前清单</a>
   <a href="#timeline">全天行程</a>
   <a href="#food">餐饮方案</a>
   <a href="#rain">雨天预案</a>
-  <a href="#cost">费用汇总</a>
   <a href="#booking">预约提醒</a>
 </nav>
 
 <div class="wrap">
 
-  <!-- 基础信息卡 -->
-  <div class="info-row">
-    <div class="info-card" style="--c:#e67e22">
-      <div class="ic">🕘</div>
-      <h3>开园时间</h3>
-      <div class="val">09:00–18:00</div>
-      <p>周二至周日开放<br>周三工作日人最少</p>
-    </div>
-    <div class="info-card" style="--c:#2980b9">
-      <div class="ic">🎟️</div>
-      <h3>门票参考</h3>
-      <div class="val">70 元/成人</div>
-      <p>1.2m 以下儿童免票<br>建议提前线上购票</p>
-    </div>
-    <div class="info-card" style="--c:#27ae60">
-      <div class="ic">📍</div>
-      <h3>地址 & 停车</h3>
-      <div class="val">免费停车场</div>
-      <p>朝阳区崔各庄乡<br>顺白路 471 号东 1 门</p>
-    </div>
-  </div>
-
-  <!-- 天气提示 -->
-  <div class="weather-bar">
-    ☀️ <b>7 月 1 日天气预报：</b>最高 30°C，早晨多云，<b>午后（14:00–17:00）有雷阵雨可能</b>，夜间转阴。<br>
-    👉 策略：<b>上午 9–11 点主攻户外</b>，午间室内避暑 + 用餐，下午 15 点后视天气再决定是否出来玩。雨天不虚此行——庄园有整套室内方案备用（见「雨天预案」部分）。
-  </div>
-
-
-  <!-- 交通方案 -->
-  <div class="section" id="transport">
-    <h2><span class="dot"></span>交通方案 · 朱辛庄 → 圣露庄园（约 50 分钟）</h2>
-
-    <div class="transport-grid">
-      <div class="t-card">
-        <div class="t-title">🚕 打车方案（滴滴）</div>
-        <div class="t-row"><span class="t-lbl">去程</span><span class="t-val">滴滴优享，约 130–180 元，50 分钟</span></div>
-        <div class="t-row"><span class="t-lbl">返程</span><span class="t-val">约 130–180 元（顺义郊区，提前 30 分钟预约返程）</span></div>
-        <div class="t-row"><span class="t-lbl">往返合计</span><span class="t-val"><b>约 260–360 元</b>（5 人约 52–72 元/人）</span></div>
-        <div class="t-row"><span class="t-lbl">载客上限</span><span class="t-val">滴滴优享最多 4 人，10 人需叫 2–3 辆</span></div>
-        <hr class="t-divider"/>
-        <div class="t-pro">✓ 不用开车，全程可休息喝东西</div>
-        <div class="t-pro">✓ 适合 3–4 人小组</div>
-        <div class="t-con">✗ 10 人同行需叫多辆，协调麻烦</div>
-        <div class="t-con">✗ 郊区返程叫车慢，遇到下午暴雨更难叫</div>
-        <div class="t-con">✗ 婴儿推车、野餐装备等大件放不下</div>
-      </div>
-      <div class="t-card rec">
-        <div class="t-title">🚗 租车方案 <span class="t-rec-badge">⭐ 推荐</span></div>
-        <div class="t-row"><span class="t-lbl">推荐车型</span><span class="t-val">别克 GL8（7 座）为主力，可选配一辆 SUV 补位</span></div>
-        <div class="t-row"><span class="t-lbl">日租 + 险</span><span class="t-val">GL8 约 550–780 元 / 辆</span></div>
-        <div class="t-row"><span class="t-lbl">油费</span><span class="t-val">约 60 元（往返约 100km）</span></div>
-        <div class="t-row"><span class="t-lbl">过路费</span><span class="t-val">约 20 元（往返）</span></div>
-        <hr class="t-divider"/>
-        <div class="t-pro">✓ 宝宝在车内哄睡，行程灵活</div>
-        <div class="t-pro">✓ 大件行李随意放后备箱</div>
-        <div class="t-pro">✓ 下午遇雨随时可以撤，不等车</div>
-        <div class="t-pro">✓ 团队一起走，不用多辆协调</div>
-      </div>
-    </div>
-
-    <!-- 人数对应方案 -->
-    <table class="group-table" style="margin-top:16px">
-      <thead><tr><th>人数</th><th>推荐车辆</th><th>租车费估算</th><th>人均</th><th>备注</th></tr></thead>
-      <tbody>
-        <tr><td>5 人</td><td>别克 GL8 × 1</td><td>约 630–860 元</td><td>约 126–172 元</td><td>7 座足够，后排还宽裕</td></tr>
-        <tr><td>6–7 人</td><td>别克 GL8 × 1</td><td>约 630–860 元</td><td>约 90–143 元</td><td>刚好满员，儿童安全座椅占 1 位</td></tr>
-        <tr><td>8–9 人</td><td>GL8 × 1 + CR-V × 1</td><td>约 1000–1300 元</td><td>约 111–162 元</td><td>CR-V 载 2–3 人，后备箱放行李</td></tr>
-        <tr><td>10 人</td><td>别克 GL8 × 2</td><td>约 1260–1720 元</td><td>约 126–172 元</td><td>两辆 GL8 舒适度最佳，车队出行</td></tr>
-      </tbody>
-    </table>
-    <p style="font-size:.74rem;color:#999;margin-top:8px">* 租车费含日租、综合险、油费、过路费估算，以神州/一嗨租车平日价格为参考。提前 3 天预约，记得勾选儿童安全座椅。</p>
-  </div>
-
-
-  <!-- 行前清单 -->
-  <div class="section" id="checklist">
-    <h2><span class="dot"></span>行前清单 · 出门前对照检查</h2>
-    <div class="checklist-grid">
-      <div class="cl-group">
-        <h4>☀️ 防暑防晒（7 月必备）</h4>
-        <ul>
-          <li>宝宝/大人防晒霜 SPF50+（至少各一支）</li>
-          <li>宽檐遮阳帽（每人一顶）</li>
-          <li>防晒衣 / 薄长袖（草坪风大也凉快）</li>
-          <li>冰袖 / 冷感毛巾（物理降温神器）</li>
-          <li>便携电风扇或折扇</li>
-          <li>足量饮用水（每人至少 1.5L）</li>
-          <li>冰块 / 冰镇饮料（保温箱装）</li>
-        </ul>
-      </div>
-      <div class="cl-group">
-        <h4>🧒 宝宝专项</h4>
-        <ul>
-          <li>婴儿推车（庄园全程塑胶平路）</li>
-          <li>辅食 / 奶粉及餐具</li>
-          <li>备用衣物 × 2–3 套（喂食/踩水易湿）</li>
-          <li>纸尿裤足量（母婴室有换尿布台）</li>
-          <li>轻薄睡袋/凉席垫（室内午睡用）</li>
-          <li>玩具 + 安抚奶嘴（等餐无聊时）</li>
-          <li>宝宝驱蚊液（草坪蚊虫少但要备）</li>
-        </ul>
-      </div>
-      <div class="cl-group">
-        <h4>🎯 活动装备</h4>
-        <ul>
-          <li>飞盘 1–2 个（草坪首选）</li>
-          <li>大号风筝（庄园内有卖，自带更便宜）</li>
-          <li>野餐垫 / 天幕（可免费在草坪铺设）</li>
-          <li>蓝牙音箱（草坪氛围感）</li>
-          <li>桌游 1–2 套（午休时室内玩）</li>
-          <li>相机 / 手机补光灯（欧式建筑拍照）</li>
-        </ul>
-      </div>
-      <div class="cl-group">
-        <h4>🌧️ 雨天备用</h4>
-        <ul>
-          <li>折叠雨伞（每 2 人一把）</li>
-          <li>轻薄雨衣（带宝宝时伞不够用）</li>
-          <li>防水袋（手机/相机防淋）</li>
-          <li>备用室内活动方案（见雨天预案）</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- 全天行程时间轴 -->
-  <div class="section" id="timeline">
-    <h2><span class="dot"></span>全天行程 · 逐小时安排</h2>
-    <div class="timeline-wrap">
-
-      <div class="block-label" style="--bc:#7f8c8d">🌅 出发阶段</div>
-      <div class="tli">
-        <div class="tli-left">07:30</div>
-        <div class="tli-mid"><div class="tli-dot"></div><div class="tli-line"></div></div>
-        <div class="tli-right">
-          <div class="tli-title">🏠 朱辛庄集合出发</div>
-          <div class="tli-desc">在朱辛庄地铁站附近集合，取好租车，确认儿童安全座椅已安装；宝宝喂完奶、换好尿布再上车</div>
-          <div class="tli-detail"><b>路线：</b>走北清路→机场高速→顺白路，全程约 50 分钟，早高峰前出发基本不堵<br><b>车内：</b>备好宝宝零食和音乐歌单，50 分钟车程不无聊</div>
-        </div>
-      </div>
-      <div class="tli">
-        <div class="tli-left">08:50</div>
-        <div class="tli-mid"><div class="tli-dot"></div><div class="tli-line"></div></div>
-        <div class="tli-right">
-          <div class="tli-title">🅿️ 抵达 · 停车 · 取票</div>
-          <div class="tli-desc">导航至「东 1 门」，免费停车场，车位充裕（周三工作日人少）</div>
-          <div class="tli-detail"><b>入园：</b>出示购票二维码，领取游览地图，询问当天有无特别活动安排<br><b>提前做：</b>预约好的烤全羊套餐在前台确认时间段</div>
-        </div>
-      </div>
-
-      <div class="block-label" style="--bc:#27ae60">🌿 上午黄金段（凉爽户外）09:00–11:30</div>
-      <div class="tli">
-        <div class="tli-left">09:00–10:00</div>
-        <div class="tli-mid"><div class="tli-dot"></div><div class="tli-line"></div></div>
-        <div class="tli-right">
-          <div class="tli-title">🥏 中央大草坪 · 飞盘 / 放风筝</div>
-          <div class="tli-desc">8000㎡ 草坪，早晨气温最舒服（约 25°C），宝宝精力最充沛，是最适合放电的时间段</div>
-          <div class="tli-detail">
-            <b>飞盘：</b>分成两组对抗，草坪够大不用担心误伤他人<br>
-            <b>风筝：</b>庄园内有微风，长尾风筝或三角风筝最适合，宝宝可以坐在野餐垫上看<br>
-            <b>宝宝：</b>铺野餐垫让宝宝爬草坪，草坪修剪平整，不用担心摔跤<br>
-            <b>拍照：</b>欧式建筑 + 大草坪背景，蓝天白云最出片，这个时段光线最好
-          </div>
-          <span class="tli-tip">宝宝户外黄金精力时段，优先安排</span>
-        </div>
-      </div>
-      <div class="tli">
-        <div class="tli-left">10:00–10:50</div>
-        <div class="tli-mid"><div class="tli-dot"></div><div class="tli-line"></div></div>
-        <div class="tli-right">
-          <div class="tli-title">🦙 萌宠互动园</div>
-          <div class="tli-desc">喂小羊、小鹿、羊驼，宝宝和大人都会尖叫兴奋</div>
-          <div class="tli-detail">
-            <b>实用提示：</b>园区有售喂食饲料（约 10–20 元/份），也可自带胡萝卜<br>
-            <b>小羊：</b>性格温顺，可以让宝宝用手直接喂，注意不要把手指伸进嘴里<br>
-            <b>羊驼：</b>个子高，建议大人抱着宝宝互动，近距离拍照超好看<br>
-            <b>避免：</b>喂完动物后及时洗手，萌宠园入口有洗手台
-          </div>
-        </div>
-      </div>
-      <div class="tli">
-        <div class="tli-left">10:50–11:30</div>
-        <div class="tli-mid"><div class="tli-dot"></div><div class="tli-line"></div></div>
-        <div class="tli-right">
-          <div class="tli-title">🏰 欧式城堡 + 葡萄长廊打卡 → 🚂 环湖小火车</div>
-          <div class="tli-desc">上午光线好，城堡和葡萄长廊是全园最出片场景；之后乘坐环湖小火车绕湖一圈</div>
-          <div class="tli-detail">
-            <b>拍照地点：</b>① 城堡大门前（橡木酒桶装饰，欧式风情）② 葡萄长廊内（7 月葡萄已成串，绿意盎然）③ 湖边草坪（远景 + 倒影）<br>
-            <b>小火车：</b>约 15–20 分钟一圈，宝宝坐在大人腿上，全程有遮阳顶棚，老人宝宝都适合<br>
-            <b>票价：</b>小火车单独收费，约 30–50 元/人（建议现场确认）
-          </div>
-        </div>
-      </div>
-
-      <div class="block-label" style="--bc:#e67e22">🍖 午间段（避暑 + 用餐）11:30–14:30</div>
-      <div class="tli">
-        <div class="tli-left">11:30–12:00</div>
-        <div class="tli-mid"><div class="tli-dot"></div><div class="tli-line"></div></div>
-        <div class="tli-right">
-          <div class="tli-title">🍇 葡萄园漫步 + 入席等餐</div>
-          <div class="tli-desc">漫步有遮阴的葡萄园，顺道去餐厅确认烤全羊席位，安置宝宝</div>
-          <div class="tli-detail">
-            <b>葡萄园：</b>7 月葡萄已成串但未完全成熟（成熟一般在 8–9 月），可欣赏不可采摘；走道有遮阴，凉爽<br>
-            <b>餐前：</b>帮宝宝换尿布、洗手，提前安排好宝宝的辅食/奶瓶
-          </div>
-        </div>
-      </div>
-      <div class="tli">
-        <div class="tli-left">12:00–13:30</div>
-        <div class="tli-mid"><div class="tli-dot"></div><div class="tli-line"></div></div>
-        <div class="tli-right">
-          <div class="tli-title">🍖 自助烤全羊午餐</div>
-          <div class="tli-desc">室内餐厅，空调凉快，正好避开最热的中午时段；烤全羊配主食饮料，慢慢吃慢慢聊</div>
-          <div class="tli-detail">
-            <b>套餐参考：</b>6–8 人烧烤套餐约 999 元（含烤全羊+配菜+主食），<b>务必提前预约</b><br>
-            <b>预约方式：</b>致电 17181116111，告知人数 + 日期，确认菜单和时间<br>
-            <b>宝宝安置：</b>餐厅有宝宝椅，或将婴儿推车推至桌边，大人轮流喂娃<br>
-            <b>节奏：</b>别催着吃完，这 1.5 小时是全天最舒适的休息段，聊天喝酒享受
-          </div>
-          <span class="tli-warn">⚠️ 烤全羊必须提前 1–2 天预约，临时当天不接单</span>
-        </div>
-      </div>
-      <div class="tli">
-        <div class="tli-left">13:30–14:30</div>
-        <div class="tli-mid"><div class="tli-dot"></div><div class="tli-line"></div></div>
-        <div class="tli-right">
-          <div class="tli-title">💤 宝宝室内午睡 + 大人红酒品鉴</div>
-          <div class="tli-desc">餐后最热的一小时（13–15 点），全员进室内，宝宝睡觉，大人享受</div>
-          <div class="tli-detail">
-            <b>宝宝：</b>将推车或折叠睡垫移至室内木屋空调区，宝宝餐后困意浓，大概率秒睡<br>
-            <b>大人：</b>庄园提供红酒品鉴体验，在品酒室品 2–3 款庄园自产葡萄酒，约 100–200 元/人<br>
-            <b>也可：</b>在木屋内打牌桌游，或单纯坐着吹空调刷手机，无压力休息
-          </div>
-          <span class="tli-tip">14:00 后气温开始下降，15 点后再出门更舒适</span>
-        </div>
-      </div>
-
-      <div class="block-label" style="--bc:#2980b9">🌤️ 下午段（回凉后继续）14:30–17:30</div>
-      <div class="tli">
-        <div class="tli-left">14:30–15:30</div>
-        <div class="tli-mid"><div class="tli-dot"></div><div class="tli-line"></div></div>
-        <div class="tli-right">
-          <div class="tli-title">🏖️ 无动力乐园 · 宝宝专属时段</div>
-          <div class="tli-desc">沙坑、蹦床、大滑梯、攀爬架，宝宝睡醒后精力充沛，正好释放；全程树荫遮盖，家长也舒服</div>
-          <div class="tli-detail">
-            <b>沙坑：</b>宝宝可以玩沙，带好小铲子和小桶；玩完记得换衣服<br>
-            <b>蹦床：</b>大宝宝可独立跳，小宝宝大人扶着轻轻颠，也会笑<br>
-            <b>大人：</b>可以在旁边的遮阴椅休息，拍照，刷手机，不用全程跟进
-          </div>
-          <span class="tli-rain">☔ 若下雨：改为室内品酒 / 桌游 / 参观木屋展览</span>
-        </div>
-      </div>
-      <div class="tli">
-        <div class="tli-left">15:30–17:00</div>
-        <div class="tli-mid"><div class="tli-dot"></div><div class="tli-line"></div></div>
-        <div class="tli-right">
-          <div class="tli-title">🏕️ 湖边天幕下午茶 + 自由活动</div>
-          <div class="tli-desc">气温降至 27°C 左右，湖边起微风，支起天幕，铺好垫子，拿出零食饮料，开始全天最放松的时段</div>
-          <div class="tli-detail">
-            <b>天幕选址：</b>湖边有专门的天幕搭建区，有柳树遮阴更佳；草坪铺垫免费，无需另付费<br>
-            <b>活动：</b>宝宝在垫子上爬玩，大人喝咖啡/冰啤酒，随意聊天；还可再玩一轮飞盘<br>
-            <b>拍照：</b>下午斜光（约 16:00–17:00 的光线）是全天最美的时段，适合拍全家福<br>
-            <b>葡萄采摘：</b>若 7 月葡萄已有部分熟透，可询问工作人员是否开放采摘（通常 8 月才大规模开放）
-          </div>
-          <span class="tli-rain">☔ 若下雨：转室内，在木屋窗边喝热茶看雨景，也是一种悠哉体验</span>
-        </div>
-      </div>
-      <div class="tli">
-        <div class="tli-left">17:00–17:30</div>
-        <div class="tli-mid"><div class="tli-dot"></div><div class="tli-line"></div></div>
-        <div class="tli-right">
-          <div class="tli-title">🎬 草坪露天电影 / 收摊整理</div>
-          <div class="tli-desc">若庄园当天有露天电影（提前致电确认），傍晚开始前占好草坪；若无，收摊整理行李，拍最后一波晚霞照</div>
-          <div class="tli-detail">
-            <b>露天电影：</b>不定期举办，出发前致电 17181116111 确认当天是否有安排<br>
-            <b>离园：</b>提前上厕所换尿布，取好行李，从容离园
-          </div>
-        </div>
-      </div>
-
-      <div class="block-label" style="--bc:#7f8c8d">🌆 返程</div>
-      <div class="tli">
-        <div class="tli-left">17:30</div>
-        <div class="tli-mid"><div class="tli-dot"></div><div class="tli-line"></div></div>
-        <div class="tli-right">
-          <div class="tli-title">🚗 离园返回朱辛庄</div>
-          <div class="tli-desc">17:30 出发，避开 18:00 后的晚高峰，约 18:20 到家；宝宝在车内可以入睡，完美结束一天</div>
-          <div class="tli-detail">
-            <b>返程路线：</b>顺白路→机场高速→北清路→朱辛庄，与来时同路<br>
-            <b>提醒：</b>还车前按要求加满油，然后开去取车点还车（取/还同地点）
-          </div>
-        </div>
-      </div>
-
-    </div><!-- timeline-wrap end -->
-  </div>
-
-
-  <!-- 餐饮方案 -->
-  <div class="section" id="food">
-    <h2><span class="dot"></span>餐饮方案 · 吃什么 · 怎么订</h2>
-    <div class="meal-card">
-      <h4>🍖 午餐主打：自助烤全羊套餐</h4>
-      <div class="meal-rows">
-        <div class="meal-row"><span class="meal-lbl">套餐规格</span><span>2–3 人套餐约 399 元 / 4–6 人套餐约 699 元 / 6–8 人套餐约 999 元</span></div>
-        <div class="meal-row"><span class="meal-lbl">含内容</span><span>烤全羊或烤羊腿 + 配菜（蔬菜/主食/饮料）</span></div>
-        <div class="meal-row"><span class="meal-lbl">预约方式</span><span>电话 <b>17181116111</b>，告知人数 + 7 月 1 日 + 用餐时间（建议订 12:00）</span></div>
-        <div class="meal-row"><span class="meal-lbl">注意</span><span>不可自带食材，套餐内菜量充足；10 人建议订 6–8 人套餐 × 1 + 2–3 人套餐 × 1</span></div>
-      </div>
-    </div>
-    <div class="meal-card" style="margin-top:10px">
-      <h4>☕ 下午茶 / 零食：自带 + 园内购买</h4>
-      <div class="meal-rows">
-        <div class="meal-row"><span class="meal-lbl">自带推荐</span><span>冰镇饮料（可乐/气泡水/咖啡）、切好的水果、饼干坚果、宝宝辅食</span></div>
-        <div class="meal-row"><span class="meal-lbl">园内购买</span><span>庄园有简餐档口（三明治/咖啡/软饮），价格略贵，但作为午睡后补充没问题</span></div>
-        <div class="meal-row"><span class="meal-lbl">红酒品鉴</span><span>庄园自产葡萄酒，单杯约 50–80 元，品鉴套装约 100–200 元/人；想喝可提前问工作人员</span></div>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- 雨天预案 -->
-  <div class="section" id="rain">
-    <h2><span class="dot"></span>雨天预案 · 下午若遇雷阵雨</h2>
-    <div class="rain-plan">
-      <h3>☔ 7 月 1 日午后有雷阵雨可能，以下为室内备选方案</h3>
+<!-- 宝宝须知 -->
+<div class="baby-alert" id="baby-notes">
+  <h2>👶 5个月宝宝出行须知 · 请认真阅读</h2>
+  <div class="baby-grid">
+    <div class="baby-item">
+      <h4>😴 清醒时长只有1.5–2小时</h4>
       <ul>
-        <li><b>红酒品鉴体验（约 1–1.5 小时）：</b>进入品酒室，听庄园讲解员介绍圣露葡萄酒酿造工艺，品 2–3 款；宝宝可以在旁边玩玩具</li>
-        <li><b>恒温木屋休闲（随时可用）：</b>空调木屋提供桌游、书籍，可以喝茶打牌，宝宝睡觉也不影响</li>
-        <li><b>室内参观 · 酒窖展览：</b>庄园有小型酒窖展示区，可以带着宝宝推车进去参观，了解葡萄酒历史</li>
-        <li><b>雨中漫步（小雨可行）：</b>撑伞在葡萄长廊或湖边走一圈，雨后空气清新，拍出来的照片反而有别样氛围</li>
-        <li><b>提前回车：</b>若雷雨较大，17:00 前结束，在车内开空调等雨停，宝宝在车里可以补觉；雨停后再下午玩一会儿</li>
+        <li>5个月宝宝每次清醒1.5–2小时后<b>必须小睡</b>，否则过度疲劳哭闹不止</li>
+        <li>一天需要3–4次小睡，每次30–90分钟</li>
+        <li>整个行程必须以宝宝睡眠为轴来排，而不是塞满活动</li>
+        <li>好消息：车程、室内午餐时段正好是宝宝睡觉时间</li>
       </ul>
     </div>
-    <p style="font-size:.77rem;color:#888;margin-top:10px">💡 北京夏季雷阵雨通常来得快去得也快，30–60 分钟内结束，提前进室内等待即可，不影响全天体验。</p>
-  </div>
-
-
-  <!-- 费用汇总 -->
-  <div class="section" id="cost">
-    <h2><span class="dot"></span>全天费用汇总（以 8 人为例）</h2>
-    <table class="cost-table">
-      <thead><tr><th>费用项目</th><th>金额估算</th><th>备注</th></tr></thead>
-      <tbody>
-        <tr><td>门票（成人 × 8）</td><td>约 560 元</td><td>70 元/人，1.2m 以下免票；建议线上购票</td></tr>
-        <tr><td>租车（GL8 × 1 + CR-V × 1）</td><td>约 1000–1300 元</td><td>含日租、险、油费、过路费</td></tr>
-        <tr><td>烤全羊午餐（8 人）</td><td>约 999–1400 元</td><td>6–8 人套餐 999 元，建议加点 1–2 道菜</td></tr>
-        <tr><td>环湖小火车（8 人）</td><td>约 240–400 元</td><td>约 30–50 元/人，现场购票</td></tr>
-        <tr><td>萌宠园饲料</td><td>约 80–160 元</td><td>约 10–20 元/份</td></tr>
-        <tr><td>红酒品鉴（自愿）</td><td>约 300–600 元</td><td>约 100–200 元/人，3–4 人参加</td></tr>
-        <tr><td>零食饮料（自带）</td><td>约 100–200 元</td><td>提前超市采购更划算</td></tr>
-        <tr class="total"><td>合计</td><td>约 3300–4800 元</td><td>8 人均摊约 <b>410–600 元/人</b></td></tr>
-        <tr><td colspan="3" class="note">* 宝宝免票，若宝宝不参与小火车/萌宠等收费项目可进一步节省；红酒品鉴为可选项。</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-
-  <!-- 预约提醒 -->
-  <div class="booking-alert" id="booking">
-    <h3>📌 出发前必做事项 · 提前完成才能顺利</h3>
-    <div class="booking-steps">
-      <div class="booking-step"><div class="step-num">1</div><span>📞 <b>立刻致电 17181116111</b>，预约 7 月 1 日烤全羊套餐，告知人数（8 人）+ 用餐时间（12:00），确认价格和菜单</span></div>
-      <div class="booking-step"><div class="step-num">2</div><span>🚗 <b>提前 3 天</b>在神州租车 / 一嗨租车 App 预约 GL8 × 1 + CR-V × 1（或 GL8 × 2），勾选儿童安全座椅，选昌平区取车网点</span></div>
-      <div class="booking-step"><div class="step-num">3</div><span>🎟️ <b>提前购票</b>：在携程 / 大众点评搜索「圣露庄园」购门票，避免现场排队；确认当日是否有露天电影</span></div>
-      <div class="booking-step"><div class="step-num">4</div><span>🛒 <b>出发前一天</b>在超市采购：冰镇饮料、水果、宝宝辅食、零食、冰块，装入保温箱放车里</span></div>
-      <div class="booking-step"><div class="step-num">5</div><span>📱 <b>出发当天早上</b>查一次天气 App，若预报有雷雨，将下午户外活动调整为室内方案，心里有数不慌乱</span></div>
+    <div class="baby-item">
+      <h4>🌡️ 高温是真实危险</h4>
+      <ul>
+        <li>5个月宝宝体温调节能力极差，30°C室外极易中暑</li>
+        <li><b>室外活动仅限9:00–10:30（最凉时段）</b>，其余时间待室内或树荫</li>
+        <li>宝宝脖子/后背有汗说明太热，立刻进室内</li>
+        <li>随时摸宝宝后颈判断体温，微暖正常，烫则警惕</li>
+      </ul>
+    </div>
+    <div class="baby-item">
+      <h4>🧴 防晒霜禁止使用</h4>
+      <ul>
+        <li><b>6个月以下宝宝禁用防晒霜</b>（皮肤屏障未发育完全，化学成分有害）</li>
+        <li>只能靠物理防晒：遮阳帽+防晒衣+推车遮阳篷+全程避开直射阳光</li>
+        <li>推车必须安装遮阳篷，不能让太阳直晒宝宝</li>
+        <li>户外活动时大人要为宝宝创造"移动阴凉区"</li>
+      </ul>
+    </div>
+    <div class="baby-item">
+      <h4>🍼 喂奶频率高</h4>
+      <ul>
+        <li>每2–3小时喂一次，9小时出行需喂3–4次</li>
+        <li>圣露庄园有母婴室，位置出发前告知前台确认</li>
+        <li>奶粉用户：带好热水瓶（85°C热水）+量好的奶粉分装盒</li>
+        <li>母乳用户：背巾/护理巾备好，推车旁随时可哺乳</li>
+      </ul>
     </div>
   </div>
+</div>
 
-</div><!-- wrap end -->
+
+<!-- 宝宝睡眠节律 -->
+<div class="rhythm-section" id="rhythm">
+  <h2><span class="dot"></span>5个月宝宝当天睡眠节律 · 以此为行程骨架</h2>
+
+  <div class="rhythm-row"><div class="rr-time">06:30–07:00</div><div class="rr-bar-wrap"><div class="rr-bar bar-awake" style="width:55px">起床</div><div class="rr-note">喂奶、换尿布，准备出发</div></div></div>
+  <div class="rhythm-row"><div class="rr-time">07:30–08:50</div><div class="rr-bar-wrap"><div class="rr-bar bar-car" style="width:120px">车程小睡 😴 第1觉</div><div class="rr-note">在车内入睡，到达时精力最好</div></div></div>
+  <div class="rhythm-row"><div class="rr-time">08:50–10:30</div><div class="rr-bar-wrap"><div class="rr-bar bar-awake" style="width:150px">清醒 · 户外活动</div><div class="rr-note">最凉爽+精力最好，安排户外</div></div></div>
+  <div class="rhythm-row"><div class="rr-time">10:30–10:50</div><div class="rr-bar-wrap"><div class="rr-bar bar-feed" style="width:80px">喂奶 🍼</div><div class="rr-note">户外活动后喂奶，哄睡</div></div></div>
+  <div class="rhythm-row"><div class="rr-time">11:00–12:30</div><div class="rr-bar-wrap"><div class="rr-bar bar-sleep" style="width:140px">室内小睡 😴 第2觉</div><div class="rr-note">★ 大人安心吃烤全羊的黄金时段</div></div></div>
+  <div class="rhythm-row"><div class="rr-time">12:30–14:30</div><div class="rr-bar-wrap"><div class="rr-bar bar-awake" style="width:160px">清醒 · 室内为主</div><div class="rr-note">最热时段，以室内活动为主</div></div></div>
+  <div class="rhythm-row"><div class="rr-time">14:30–15:30</div><div class="rr-bar-wrap"><div class="rr-bar bar-sleep" style="width:90px">小睡 😴 第3觉</div><div class="rr-note">推车或木屋，大人喝茶休息</div></div></div>
+  <div class="rhythm-row"><div class="rr-time">15:30–17:00</div><div class="rr-bar-wrap"><div class="rr-bar bar-awake" style="width:130px">清醒 · 下午户外</div><div class="rr-note">气温降至27°C，可短暂外出</div></div></div>
+  <div class="rhythm-row"><div class="rr-time">17:00–17:50</div><div class="rr-bar-wrap"><div class="rr-bar bar-car" style="width:110px">车程小睡 😴</div><div class="rr-note">回程车内自然入睡</div></div></div>
+
+  <div class="rhythm-tip">
+    💡 <b>核心逻辑：</b>宝宝第2觉（11:00–12:30）= 大人最舒服吃饭的时段；第3觉（14:30–15:30）= 大人喝茶品酒休息的时段。宝宝的睡眠其实是大人的自由时间，不冲突。<br>
+    ⚠️ <b>注意：</b>以上时间是参考，实际以宝宝的"困意信号"为准（揉眼睛、打哈欠、变得烦躁），不要强撑着等时间点。
+  </div>
+</div>
+
+
+<!-- 交通方案 -->
+<div class="section" id="transport">
+  <h2><span class="dot"></span>交通方案</h2>
+  <div class="transport-grid">
+    <div class="t-card">
+      <div class="t-title">🚕 打车方案（滴滴）</div>
+      <div class="t-row"><span class="t-lbl">去程</span><span>滴滴优享，约130–180元，50分钟</span></div>
+      <div class="t-row"><span class="t-lbl">返程</span><span>约130–180元，提前30分钟预约</span></div>
+      <div class="t-row"><span class="t-lbl">合计</span><span><b>约260–360元</b></span></div>
+      <div class="t-div"></div>
+      <div class="t-con">✗ 5个月宝宝行李极多，打车放不下</div>
+      <div class="t-con">✗ 郊区返程叫车慢，宝宝等车哭闹</div>
+      <div class="t-con">✗ 10人需多辆，无法同步出发</div>
+    </div>
+    <div class="t-card rec">
+      <div class="t-title">🚗 租车方案 <span class="t-rec-b">⭐ 强烈推荐</span></div>
+      <div class="t-row"><span class="t-lbl">推荐车型</span><span>别克GL8（7座），空间大适合带娃</span></div>
+      <div class="t-row"><span class="t-lbl">日租+险</span><span>约550–780元</span></div>
+      <div class="t-row"><span class="t-lbl">油+路费</span><span>约80元（往返100km）</span></div>
+      <div class="t-row"><span class="t-lbl">GL8合计</span><span><b>约630–860元</b></span></div>
+      <div class="t-div"></div>
+      <div class="t-pro">✓ 宝宝可在车内睡第1觉和回程觉</div>
+      <div class="t-pro">✓ 婴儿推车、奶瓶保温箱等全放后备箱</div>
+      <div class="t-pro">✓ 宝宝哭了随时可以发动车开空调哄</div>
+      <div class="t-pro">✓ 不用等车，灵活说走就走</div>
+    </div>
+  </div>
+  <table class="group-table">
+    <thead><tr><th>人数</th><th>推荐配置</th><th>费用估算</th><th>人均</th></tr></thead>
+    <tbody>
+      <tr><td>5人</td><td>GL8 × 1</td><td>约630–860元</td><td>约126–172元</td></tr>
+      <tr><td>6–7人</td><td>GL8 × 1</td><td>约630–860元</td><td>约90–143元</td></tr>
+      <tr><td>8–9人</td><td>GL8 × 1 + CR-V × 1</td><td>约1000–1300元</td><td>约111–162元</td></tr>
+      <tr><td>10人</td><td>GL8 × 2</td><td>约1260–1720元</td><td>约126–172元</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- 行前清单 -->
+<div class="section" id="checklist">
+  <h2><span class="dot"></span>行前清单 · 5个月宝宝专版</h2>
+  <div class="checklist-grid">
+    <div class="cl-group">
+      <h4>👶 宝宝必带（一项都不能少）</h4>
+      <ul>
+        <li>婴儿推车（带遮阳篷，必须有）</li>
+        <li>儿童安全座椅（租车时预约，不可代替）</li>
+        <li>纸尿裤 × 10片以上（带够宁可多不可少）</li>
+        <li>湿巾 × 2包、护臀霜</li>
+        <li>备用衣物 × 3套（溢奶/流汗/踩水）</li>
+        <li>薄睡袋或小毯子（室内空调冷）</li>
+        <li>安抚奶嘴（哄睡神器）</li>
+        <li>白噪音 App 或音乐（帮助外出入睡）</li>
+        <li class="warn">防晒霜禁止！6个月以下不能用</li>
+      </ul>
+    </div>
+    <div class="cl-group">
+      <h4>🍼 喂养用品</h4>
+      <ul>
+        <li>母乳：哺乳巾/背巾，可随时哺乳</li>
+        <li>奶粉：分装盒（已量好份量）× 5份</li>
+        <li>保温壶（装85°C热水）× 1个</li>
+        <li>奶瓶 × 2个（备用1个）</li>
+        <li>辅食（如已添加）及小勺</li>
+        <li>围嘴 × 3条</li>
+      </ul>
+    </div>
+    <div class="cl-group">
+      <h4>☀️ 物理防晒（代替防晒霜）</h4>
+      <ul>
+        <li>宽檐遮阳帽（帽檐≥7cm，脸颈都遮住）</li>
+        <li>薄长袖防晒衣（UPF50+）</li>
+        <li>推车遮阳篷全覆盖（必须档直射光）</li>
+        <li>便携遮阳伞（大人为推车遮阳）</li>
+        <li>湿毛巾/冷感毛巾（宝宝脖子擦汗降温）</li>
+        <li>小型USB风扇（推车旁吹风）</li>
+      </ul>
+    </div>
+    <div class="cl-group">
+      <h4>🌧️ 雨天 & 急救备品</h4>
+      <ul>
+        <li>折叠雨衣（成人）× 人手一件</li>
+        <li>推车防雨罩（宝宝专用）</li>
+        <li>退烧贴 × 2片</li>
+        <li>创可贴、碘伏小棉棒</li>
+        <li>宝宝体温计（出行必备）</li>
+        <li>医疗本/常用药（布洛芬、益生菌等）</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- 全天行程 -->
+<div class="section" id="timeline">
+  <h2><span class="dot"></span>全天行程 · 以宝宝睡眠为轴重新编排</h2>
+  <div class="tl">
+
+    <div class="block-tag" style="background:#7f8c8d">🌅 出发 & 车程（宝宝睡第1觉）</div>
+
+    <div class="tli">
+      <div class="tli-left">06:30</div>
+      <div class="tli-mid"><div class="tli-dot" style="background:#7f8c8d"></div><div class="tli-line" style="background:#ddd"></div></div>
+      <div class="tli-right">
+        <div class="tli-title">🏠 宝宝起床 · 晨间准备</div>
+        <div class="tli-desc">宝宝喂奶、换尿布；大人吃早饭、搬好所有行李装车，保温壶装好热水</div>
+        <div class="tli-box feed">宝宝喂饱后精神好，是出发的最佳状态。<b>不要饿着宝宝出发</b>，否则车上哭闹。</div>
+      </div>
+    </div>
+
+    <div class="tli">
+      <div class="tli-left">07:30</div>
+      <div class="tli-mid"><div class="tli-dot" style="background:#7f8c8d"></div><div class="tli-line" style="background:#ddd"></div></div>
+      <div class="tli-right">
+        <div class="tli-title">🚗 出发 → 宝宝车内睡第1觉</div>
+        <div class="tli-desc">走北清路→机场高速→顺白路，约50分钟。宝宝吃饱后在晃动的车内很快入睡——这是天然的哄睡神器</div>
+        <div class="tli-box sleep"><b>车内哄睡技巧：</b>安全座椅调好靠背角度（约45°），打开白噪音，拉好遮光帘，开空调26°C，通常10分钟内入睡。<br><b>不要</b>停车"查看宝宝睡没"，车一停宝宝会醒。</div>
+      </div>
+    </div>
+
+    <div class="tli">
+      <div class="tli-left">08:50</div>
+      <div class="tli-mid"><div class="tli-dot" style="background:#7f8c8d"></div><div class="tli-line" style="background:#ddd"></div></div>
+      <div class="tli-right">
+        <div class="tli-title">🅿️ 到达停车 · 等宝宝自然醒</div>
+        <div class="tli-desc">停车后不要急着叫醒宝宝，让其自然醒（通常5–15分钟），大人先拿好行李、推出推车、换好尿布台准备</div>
+        <span class="pill pill-ok">工作日停车位充裕</span>
+      </div>
+    </div>
+
+    <div class="block-tag" style="background:#27ae60">🌿 上午黄金段（凉爽+宝宝精力最好）09:00–10:30</div>
+
+    <div class="tli">
+      <div class="tli-left">09:00–09:45</div>
+      <div class="tli-mid"><div class="tli-dot" style="background:#27ae60"></div><div class="tli-line" style="background:#c8e6c9"></div></div>
+      <div class="tli-right">
+        <div class="tli-title">🥏 大草坪 · 飞盘 / 拍照 / 宝宝趴趴时间</div>
+        <div class="tli-desc">气温约26°C，是全天最适合宝宝在户外的时段。全程在<b>树荫下或推车遮阳篷下</b>，绝对不能让太阳直晒宝宝</div>
+        <div class="tli-box">
+          <b>宝宝可以做的：</b>铺好野餐垫在树荫下，让宝宝趴着做tummy time（练抬头），感受草地的触感；宝宝看着大人玩飞盘会很开心（5个月视力已有追踪能力）<br>
+          <b>大人轮换：</b>一人陪宝宝，其余人飞盘/拍照，每隔10分钟换人<br>
+          <b>⏰ 注意时长：</b>宝宝户外最多45分钟，超过就推入室内或树荫深处
+        </div>
+        <span class="pill pill-hot">⚠️ 全程避开阳光直射</span>
+      </div>
+    </div>
+
+    <div class="tli">
+      <div class="tli-left">09:45–10:20</div>
+      <div class="tli-mid"><div class="tli-dot" style="background:#27ae60"></div><div class="tli-line" style="background:#c8e6c9"></div></div>
+      <div class="tli-right">
+        <div class="tli-title">🦙 萌宠园 + 🚂 环湖小火车</div>
+        <div class="tli-desc">萌宠园是5个月宝宝最有反应的活动——小动物的移动和声音会让宝宝目不转睛；小火车的晃动节奏也很受宝宝喜欢</div>
+        <div class="tli-box">
+          <b>萌宠园：</b>大人抱着宝宝靠近小羊/羊驼，宝宝会伸手去摸，视觉+触觉双重刺激；约20分钟即可，不要过度刺激<br>
+          <b>小火车：</b>宝宝坐在大人腿上，轻微晃动感宝宝很享受；全程有遮阳顶棚，约20分钟一圈<br>
+          <b>注意：</b>宝宝接触动物后，及时用湿巾擦手
+        </div>
+      </div>
+    </div>
+
+    <div class="tli">
+      <div class="tli-left">10:20–10:50</div>
+      <div class="tli-mid"><div class="tli-dot" style="background:#27ae60"></div><div class="tli-line" style="background:#c8e6c9"></div></div>
+      <div class="tli-right">
+        <div class="tli-title">🍼 母婴室 · 喂奶 + 哄睡准备</div>
+        <div class="tli-desc">宝宝已清醒近2小时，开始出现困意信号（揉眼、打哈欠、开始烦躁），进母婴室喂奶，准备哄睡</div>
+        <div class="tli-box feed">
+          <b>母婴室位置：</b>入园时向前台确认<br>
+          <b>哄睡方式：</b>喂完奶竖抱拍嗝10分钟，然后放入推车开启白噪音轻摇，通常15分钟内睡着<br>
+          <b>推车睡：</b>推车调成平躺模式，找室内安静角落停放
+        </div>
+        <span class="pill pill-sleep">宝宝困了别拖，越拖越难哄</span>
+      </div>
+    </div>
+
+    <div class="block-tag" style="background:#e67e22">🍖 午间段（宝宝睡觉 = 大人吃饭黄金时段）11:00–14:00</div>
+
+    <div class="tli">
+      <div class="tli-left">11:00–12:30</div>
+      <div class="tli-mid"><div class="tli-dot" style="background:#e67e22"></div><div class="tli-line" style="background:#f0d0b0"></div></div>
+      <div class="tli-right">
+        <div class="tli-title">😴 宝宝第2觉 ｜ 大人 🍖 烤全羊午餐</div>
+        <div class="tli-desc">宝宝在推车里睡觉，推车停在餐桌旁边。大人安心吃烤全羊，这是全天最轻松的时段</div>
+        <div class="tli-box sleep">
+          <b>餐厅选位：</b>选靠墙角的位置，把推车停在旁边，不影响过道；室内空调温度建议26°C，给宝宝盖薄毯<br>
+          <b>宝宝醒了：</b>如果宝宝中途醒来，一人先出去哄，其余人继续吃，轮换即可<br>
+          <b>不要：</b>因为宝宝在睡觉就不敢说话——正常音量交流不影响宝宝睡眠
+        </div>
+        <span class="pill pill-sleep">★ 这1.5小时是全天最珍贵的大人自由时间</span>
+      </div>
+    </div>
+
+    <div class="tli">
+      <div class="tli-left">12:30–13:00</div>
+      <div class="tli-mid"><div class="tli-dot" style="background:#e67e22"></div><div class="tli-line" style="background:#f0d0b0"></div></div>
+      <div class="tli-right">
+        <div class="tli-title">🍼 宝宝醒来 · 喂奶 + 换尿布</div>
+        <div class="tli-desc">宝宝睡醒后喂奶，换好尿布，让宝宝在室内充分清醒适应，不要急着带出去</div>
+        <div class="tli-box feed">喂奶时间约20分钟，可以在餐厅角落哺乳或回母婴室，大人这时候可以点咖啡/甜品</div>
+      </div>
+    </div>
+
+    <div class="tli">
+      <div class="tli-left">13:00–14:30</div>
+      <div class="tli-mid"><div class="tli-dot" style="background:#e67e22"></div><div class="tli-line" style="background:#f0d0b0"></div></div>
+      <div class="tli-right">
+        <div class="tli-title">🍷 室内活动 · 品酒 / 参观酒窖 / 休息</div>
+        <div class="tli-desc">13–15点是全天最热时段（约30°C+），全员待室内。宝宝刚睡醒精神好，可以趴在垫子上玩玩具</div>
+        <div class="tli-box">
+          <b>推荐：</b>红酒品鉴（2–3人参与即可，约100–200元/人）；其余人在木屋里喝茶打牌聊天<br>
+          <b>宝宝：</b>铺好地垫，拿出响铃/布书/牙胶，宝宝自己玩，大人在旁边不用全程抱<br>
+          <b>欧式城堡拍照：</b>可以选在这段时间快速去室外拍一组（控制在15分钟内），避开正午最热时段已过
+        </div>
+        <span class="pill pill-hot">⚠️ 这段时间不建议带宝宝长时间户外</span>
+      </div>
+    </div>
+
+    <div class="block-tag" style="background:#2980b9">🌤️ 下午段（降温 + 宝宝第3觉）14:30–17:00</div>
+
+    <div class="tli">
+      <div class="tli-left">14:30–15:30</div>
+      <div class="tli-mid"><div class="tli-dot" style="background:#2980b9"></div><div class="tli-line" style="background:#bbdefb"></div></div>
+      <div class="tli-right">
+        <div class="tli-title">😴 宝宝第3觉 ｜ 大人 ☕ 湖边天幕下午茶</div>
+        <div class="tli-desc">宝宝已清醒约2小时，再次哄睡。大人可以在湖边天幕下喝咖啡、喝茶，轻松聊天</div>
+        <div class="tli-box sleep">
+          <b>哄睡建议：</b>可在室内（木屋）或湖边树荫下（推车遮阳篷关好）哄睡<br>
+          <b>天幕选址：</b>湖边有柳树/大树遮阴区，在树荫下铺天幕，宝宝推车停旁边<br>
+          <b>大人自由时间：</b>宝宝睡着后这1小时是下午最舒适的放松时段
+        </div>
+      </div>
+    </div>
+
+    <div class="tli">
+      <div class="tli-left">15:30–17:00</div>
+      <div class="tli-mid"><div class="tli-dot" style="background:#2980b9"></div><div class="tli-line" style="background:#bbdefb"></div></div>
+      <div class="tli-right">
+        <div class="tli-title">🌿 宝宝醒来 · 下午轻松户外时光</div>
+        <div class="tli-desc">气温降至约27°C，微风，宝宝刚睡醒精神好，可以再出来转一转。节奏轻松，不安排密集活动</div>
+        <div class="tli-box">
+          <b>适合做的：</b>推着婴儿车在湖边走走，宝宝看水面和树木（5个月视觉喜欢对比鲜明的场景）；大人继续聊天喝东西<br>
+          <b>葡萄长廊：</b>傍晚光线进去拍照最好看，绿色背景衬托宝宝颜色很正<br>
+          <b>全家福：</b>16:00–17:00的斜光是全天最美的拍照光线，推荐在这段拍全家福
+        </div>
+        <span class="pill pill-rain">☔ 若下雨：转室内，宝宝看窗外雨景，大人喝热茶</span>
+      </div>
+    </div>
+
+    <div class="block-tag" style="background:#7f8c8d">🌆 返程</div>
+
+    <div class="tli">
+      <div class="tli-left">17:00–17:15</div>
+      <div class="tli-mid"><div class="tli-dot" style="background:#7f8c8d"></div><div class="tli-line" style="background:#ddd"></div></div>
+      <div class="tli-right">
+        <div class="tli-title">🧳 收摊离园</div>
+        <div class="tli-desc">喂最后一次奶，换好尿布，收拾行李装车；宝宝喂饱后状态好，上车更容易入睡</div>
+      </div>
+    </div>
+
+    <div class="tli">
+      <div class="tli-left">17:15–18:05</div>
+      <div class="tli-mid"><div class="tli-dot" style="background:#7f8c8d"></div><div class="tli-line" style="background:#ddd"></div></div>
+      <div class="tli-right">
+        <div class="tli-title">🚗 返回朱辛庄 · 宝宝车内入睡</div>
+        <div class="tli-desc">宝宝在车内通常10分钟内入睡，约18:05到家；注意到家后不要直接把宝宝从车座抱出来，等5分钟让其在原地多睡一会儿</div>
+        <div class="tli-box sleep">到家后宝宝如果还在睡，可以考虑连人带推车移入室内，不打扰其睡眠——这样晚上睡眠质量更好。</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- 餐饮方案 -->
+<div class="section" id="food">
+  <h2><span class="dot"></span>餐饮方案</h2>
+  <div class="meal-card">
+    <h4>🍖 午餐：自助烤全羊套餐（宝宝睡觉期间吃，完美）</h4>
+    <div class="meal-row"><span class="meal-lbl">套餐价</span><span>6–8人套餐约999元，可加点1–2道菜</span></div>
+    <div class="meal-row"><span class="meal-lbl">预约</span><span>电话 <b>17181116111</b>，提前1–2天预约，订12:00用餐</span></div>
+    <div class="meal-row"><span class="meal-lbl">宝宝安置</span><span>推车停在餐桌旁，推车内继续睡；如宝宝醒来，轮流一人看娃一人吃</span></div>
+  </div>
+  <div class="meal-card" style="margin-top:10px">
+    <h4>☕ 下午茶：自带为主，园内补充</h4>
+    <div class="meal-row"><span class="meal-lbl">自带</span><span>冰镇饮料、切好的水果、宝宝辅食（如已添加）、零食</span></div>
+    <div class="meal-row"><span class="meal-lbl">园内</span><span>简餐档口有咖啡/冷饮/三明治，价格略贵</span></div>
+    <div class="meal-row"><span class="meal-lbl">红酒品鉴</span><span>约100–200元/人（自愿），宝宝旁边有人陪即可</span></div>
+  </div>
+</div>
+
+
+<!-- 雨天预案 -->
+<div class="section" id="rain">
+  <h2><span class="dot"></span>雨天预案 · 午后若遇雷阵雨</h2>
+  <div class="rain-box">
+    <h3>☔ 对5个月宝宝来说，下雨其实问题不大</h3>
+    <ul>
+      <li><b>室内木屋空调区：</b>推车直接推进来，宝宝睡觉不受影响，大人桌游/喝茶/聊天</li>
+      <li><b>品酒室：</b>室内活动，带宝宝进去参观也可以</li>
+      <li><b>提前回车：</b>若雷雨较大，17:00前上车，宝宝在车内哄睡，大人开空调等雨停；雨停后再回来玩</li>
+      <li><b>推车雨罩：</b>小雨时可以套上推车雨罩，继续溜达，宝宝在推车里看雨景有时反而很安静</li>
+      <li><b>注意：</b>雷雨期间不要带宝宝在空旷草坪——雷击危险，要进建筑物室内</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- 费用汇总 -->
+<div class="section">
+  <h2><span class="dot"></span>全天费用汇总（以8人为例）</h2>
+  <table class="cost-table">
+    <thead><tr><th>项目</th><th>金额</th><th>备注</th></tr></thead>
+    <tbody>
+      <tr><td>门票（成人×8）</td><td>约560元</td><td>70元/人，宝宝免票</td></tr>
+      <tr><td>租车（GL8×1+CR-V×1）</td><td>约1000–1300元</td><td>含日租、险、油、路费</td></tr>
+      <tr><td>烤全羊午餐</td><td>约999–1400元</td><td>6–8人套餐，可加菜</td></tr>
+      <tr><td>环湖小火车</td><td>约240–400元</td><td>约30–50元/人</td></tr>
+      <tr><td>萌宠园饲料</td><td>约80–160元</td><td>约10–20元/份</td></tr>
+      <tr><td>红酒品鉴（自愿）</td><td>约200–400元</td><td>2–3人参与即可</td></tr>
+      <tr><td>饮料零食（自带）</td><td>约100–150元</td><td>超市提前买</td></tr>
+      <tr class="total"><td>合计</td><td>约3200–4800元</td><td>8人均摊约 <b>400–600元/人</b></td></tr>
+      <tr><td colspan="3" class="note-sm">* 宝宝免票且不消费大部分项目，有宝宝的家庭人均反而不高。</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- 预约提醒 -->
+<div class="booking-box" id="booking">
+  <h3>📌 出发前必做事项</h3>
+  <div class="bsteps">
+    <div class="bstep"><div class="bnum">1</div><span>📞 <b>立刻</b>致电 17181116111，预约7月1日烤全羊套餐，告知8–10人、12:00用餐，确认价格</span></div>
+    <div class="bstep"><div class="bnum">2</div><span>🚗 提前3天在神州/一嗨租车App预约GL8，<b>必须勾选婴儿安全座椅（0–12个月）</b>，选昌平取车点</span></div>
+    <div class="bstep"><div class="bnum">3</div><span>🎟️ 携程/美团提前购门票，同时确认当天是否有露天电影或特别活动</span></div>
+    <div class="bstep"><div class="bnum">4</div><span>🛒 出发前一天超市备货：冰镇饮料、水果、宝宝辅食、冰块，装保温箱放车里</span></div>
+    <div class="bstep"><div class="bnum">5</div><span>🌤️ 出发当天早上查天气App，若下午有雷雨，心里备好室内方案（不慌不乱）</span></div>
+    <div class="bstep"><div class="bnum">6</div><span>👶 <b>出发前检查：</b>纸尿裤够不够（至少10片）、奶粉/热水准备好、安全座椅是否安装到位</span></div>
+  </div>
+</div>
+
+</div>
 
 <footer>
-  <p>📍 出发地：北京市昌平区朱辛庄 &nbsp;·&nbsp; 🏰 目的地：顺义圣露庄园</p>
-  <p style="margin-top:6px">☎️ 庄园咨询电话：17181116111 &nbsp;·&nbsp; 祝 7 月 1 日出行愉快！🎉</p>
+  <p>📍 出发地：北京昌平区朱辛庄 &nbsp;·&nbsp; 🏰 目的地：顺义圣露庄园</p>
+  <p style="margin-top:5px">☎️ 庄园咨询：17181116111 &nbsp;·&nbsp; 祝7月1日玩得开心！🎉</p>
   <p style="margin-top:6px"><a href="index.html" style="color:#e67e22;text-decoration:none">← 返回四地总览攻略</a></p>
 </footer>
 
