@@ -1,331 +1,189 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>北京周边亲子出行攻略 · 朱辛庄出发</title>
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f7fa;color:#2c3e50}
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>北京周边亲子出行攻略 · 朱辛庄出发</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f7fa;color:#2c3e50}
 
-    /* HERO */
-    .hero{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;text-align:center;padding:56px 20px 44px}
-    .hero h1{font-size:2.2rem;letter-spacing:2px;margin-bottom:8px}
-    .hero p{font-size:1rem;opacity:.85;margin-top:6px}
-    .hero .meta{margin-top:18px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-    .hero .meta span{background:rgba(255,255,255,.18);border-radius:20px;padding:6px 16px;font-size:.88rem}
+.hero{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;text-align:center;padding:52px 20px 40px}
+.hero h1{font-size:2.1rem;letter-spacing:2px;margin-bottom:8px}
+.hero p{font-size:.97rem;opacity:.85;margin-top:6px}
+.hero .meta{margin-top:16px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.hero .meta span{background:rgba(255,255,255,.18);border-radius:20px;padding:5px 15px;font-size:.85rem}
 
-    /* NAV */
-    .nav{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;background:#fff;padding:12px 16px;box-shadow:0 2px 8px rgba(0,0,0,.07);position:sticky;top:0;z-index:100}
-    .nav a{text-decoration:none;color:#764ba2;font-weight:600;font-size:.88rem;padding:5px 14px;border-radius:20px;border:1.5px solid #764ba2;transition:all .2s}
-    .nav a:hover{background:#764ba2;color:#fff}
+.nav{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;background:#fff;padding:11px 14px;box-shadow:0 2px 8px rgba(0,0,0,.07);position:sticky;top:0;z-index:100}
+.nav a{text-decoration:none;color:#764ba2;font-weight:600;font-size:.84rem;padding:5px 13px;border-radius:20px;border:1.5px solid #764ba2;transition:all .2s}
+.nav a:hover{background:#764ba2;color:#fff}
 
-    /* 租车方案 */
-    .car-section{max-width:960px;margin:28px auto 0;padding:0 16px}
-    .car-inner{background:#fff;border-radius:16px;padding:24px 28px;box-shadow:0 4px 20px rgba(0,0,0,.07)}
-    .car-inner>h2{font-size:1.1rem;margin-bottom:20px;display:flex;align-items:center;gap:8px}
-    .car-platform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
-    .platform-card{border:2px solid #eee;border-radius:12px;padding:16px;text-align:center;transition:border-color .2s}
-    .platform-card.rec{border-color:#27ae60;background:#f0faf4}
-    .platform-card .name{font-size:1rem;font-weight:700;margin-bottom:6px}
-    .platform-card .badge-rec{display:inline-block;background:#27ae60;color:#fff;font-size:.7rem;border-radius:8px;padding:2px 8px;margin-bottom:8px}
-    .platform-card ul{list-style:none;font-size:.78rem;color:#555;text-align:left}
-    .platform-card ul li{padding:3px 0;display:flex;gap:5px}
-    .platform-card ul li::before{content:"·";color:#764ba2;font-weight:bold}
+/* 总览对比表 */
+.overview{max-width:960px;margin:30px auto 0;padding:0 16px}
+.overview-inner{background:#fff;border-radius:16px;padding:22px 26px;box-shadow:0 4px 20px rgba(0,0,0,.07)}
+.overview-inner h2{font-size:1.05rem;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.ov-table{width:100%;border-collapse:collapse;font-size:.82rem}
+.ov-table th{background:#f8f9ff;padding:9px 10px;font-weight:700;color:#444;border-bottom:2px solid #e0e0f0;text-align:center}
+.ov-table th:first-child{text-align:left}
+.ov-table td{padding:9px 10px;border-bottom:1px solid #f0f0f0;vertical-align:middle;text-align:center}
+.ov-table td:first-child{font-weight:600;text-align:left}
+.ov-table tr:last-child td{border-bottom:none}
+.ov-table .taxi-col{color:#e65100}
+.ov-table .car-col{color:#1b5e20}
+.rec-badge{background:#27ae60;color:#fff;font-size:.68rem;border-radius:6px;padding:1px 6px;margin-left:4px;vertical-align:middle}
+.warn-sm{font-size:.72rem;color:#b71c1c;margin-top:2px}
 
-    .car-model-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px}
-    .car-model-card{border-radius:12px;padding:16px 18px;border:1px solid #eee}
-    .car-model-card.top{background:linear-gradient(135deg,#fff8e1,#fff3cd);border-color:#f6c90e}
-    .car-model-card h4{font-size:.95rem;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:6px}
-    .car-model-card .sub{font-size:.78rem;color:#888;margin-bottom:10px}
-    .car-model-card .specs{display:flex;flex-wrap:wrap;gap:6px}
-    .spec-tag{background:#f4f4f8;border-radius:8px;padding:3px 10px;font-size:.76rem;color:#555}
-    .spec-tag.green{background:#e8f5e9;color:#2e7d32}
-    .spec-tag.orange{background:#fff3e0;color:#e65100}
+/* 目的地卡片 */
+.destination{max-width:960px;margin:30px auto;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+.dest-header{padding:24px 26px 16px;border-left:6px solid var(--accent);display:flex;align-items:flex-start;gap:14px}
+.dest-num{font-size:2.2rem;font-weight:900;color:var(--accent);line-height:1;min-width:42px}
+.dest-info h2{font-size:1.42rem;margin-bottom:3px}
+.dest-info p{color:#777;font-size:.86rem;margin-top:2px}
+.badges{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
+.badge{font-size:.76rem;font-weight:700;padding:3px 10px;border-radius:10px}
+.badge-drive{background:var(--accent-light);color:var(--accent)}
+.badge-tip{background:#f3e5f5;color:#7b1fa2}
 
-    .fee-table{width:100%;border-collapse:collapse;font-size:.84rem;margin-bottom:22px}
-    .fee-table th{background:#f8f9ff;padding:9px 12px;text-align:left;font-weight:700;color:#444;border-bottom:2px solid #e8e8f0}
-    .fee-table td{padding:9px 12px;border-bottom:1px solid #f0f0f0;color:#555}
-    .fee-table tr:last-child td{border-bottom:none}
-    .fee-table .total-row td{font-weight:700;color:#2c3e50;background:#f8f9ff}
-    .fee-tag{display:inline-block;font-size:.72rem;border-radius:6px;padding:1px 7px;margin-left:4px}
-    .fee-tag.g{background:#e8f5e9;color:#2e7d32}
-    .fee-tag.o{background:#fff3e0;color:#e65100}
+/* 九宫格 */
+.grid-9{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.grid-9 .iw{position:relative;aspect-ratio:1;overflow:hidden;background:#e8ecf0}
+.grid-9 .iw img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.grid-9 .iw:hover img{transform:scale(1.06)}
+.grid-9 .iw .lb{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.55));color:#fff;font-size:.68rem;padding:12px 7px 5px;text-align:center}
 
-    .steps-list{counter-reset:step;list-style:none;display:flex;flex-direction:column;gap:12px}
-    .steps-list li{display:flex;align-items:flex-start;gap:12px;font-size:.85rem;color:#444}
-    .steps-list li::before{counter-increment:step;content:counter(step);background:#764ba2;color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0;margin-top:1px}
-    .steps-list li span{padding-top:2px}
-    .steps-list li b{color:#2c3e50}
+/* 交通对比 */
+.transport{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #f0f0f0}
+.t-opt{padding:18px 22px}
+.t-opt:first-child{border-right:1px solid #f0f0f0}
+.t-opt.t-rec{background:#f0faf4}
+.t-head{font-size:.9rem;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:7px}
+.t-rec-tag{background:#27ae60;color:#fff;font-size:.68rem;border-radius:6px;padding:1px 7px}
+.t-rows{display:flex;flex-direction:column;gap:7px}
+.t-row{display:flex;align-items:flex-start;gap:8px;font-size:.81rem}
+.t-label{font-weight:700;color:#555;white-space:nowrap;min-width:60px}
+.t-val{color:#333;line-height:1.45}
+.t-pro{color:#27ae60;font-size:.78rem}
+.t-con{color:#e53935;font-size:.78rem}
+.t-divider{border:none;border-top:1px dashed #ddd;margin:6px 0}
 
-    .warn-box{background:#fff8e1;border-left:4px solid #f6c90e;border-radius:0 10px 10px 0;padding:12px 16px;font-size:.82rem;color:#6d4c00;margin-top:18px;line-height:1.7}
+/* 活动 + 母婴 */
+.info-cols{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #f0f0f0}
+.info-col{padding:18px 22px}
+.info-col:first-child{border-right:1px solid #f0f0f0}
+.info-col h3{font-size:.88rem;font-weight:700;margin-bottom:11px;display:flex;align-items:center;gap:7px}
+.info-col h3 .ic{width:24px;height:24px;border-radius:7px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-size:12px}
+.tag-list{display:flex;flex-wrap:wrap;gap:6px}
+.tag{background:#f4f4f8;border-radius:9px;padding:4px 10px;font-size:.78rem;color:#555}
+.tag.baby{background:#fff0f6;color:#c2185b}
 
-    /* 出行须知 */
-    .tips-box{max-width:960px;margin:32px auto 0;padding:0 16px}
-    .tips-inner{background:#fff;border-radius:16px;padding:24px 28px;box-shadow:0 4px 20px rgba(0,0,0,.07)}
-    .tips-inner h2{font-size:1.1rem;margin-bottom:16px;display:flex;align-items:center;gap:8px}
-    .tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .tip-card{background:#f8f9ff;border-radius:12px;padding:16px 18px}
-    .tip-card h3{font-size:.95rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px}
-    .tip-card ul{list-style:none;padding:0}
-    .tip-card ul li{font-size:.85rem;color:#555;padding:4px 0;border-bottom:1px solid #eee;display:flex;align-items:flex-start;gap:6px}
-    .tip-card ul li:last-child{border-bottom:none}
-    .tip-card ul li::before{content:"•";color:#764ba2;font-weight:bold;flex-shrink:0}
-    .verdict{background:linear-gradient(135deg,#e8f5e9,#f1f8e9);border-radius:10px;padding:12px 16px;margin-top:12px;font-size:.87rem;color:#2e7d32;font-weight:600}
+/* 时间轴 */
+.schedule{border-top:1px solid #f0f0f0;padding:18px 22px 22px}
+.schedule h3{font-size:.88rem;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:7px}
+.schedule h3 .ic{width:24px;height:24px;border-radius:7px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-size:12px}
+.tl{display:flex;flex-direction:column}
+.tli{display:flex;align-items:stretch}
+.tli-time{width:84px;min-width:84px;font-size:.75rem;font-weight:700;color:var(--accent);padding:8px 8px 8px 0;text-align:right;white-space:nowrap}
+.tli-dc{display:flex;flex-direction:column;align-items:center;width:20px;min-width:20px}
+.tli-dot{width:9px;height:9px;border-radius:50%;background:var(--accent);margin-top:10px;flex-shrink:0}
+.tli-line{width:2px;background:#e8e8f0;flex:1;margin:2px 0}
+.tli:last-child .tli-line{display:none}
+.tli-body{padding:5px 0 10px 10px;flex:1}
+.tli-title{font-size:.86rem;font-weight:600}
+.tli-desc{font-size:.76rem;color:#888;margin-top:2px;line-height:1.5}
+.tli-tip{display:inline-block;background:var(--accent-light);color:var(--accent);font-size:.7rem;border-radius:7px;padding:1px 8px;margin-top:3px}
+.tli-warn{display:inline-block;background:#fff3e0;color:#e65100;font-size:.7rem;border-radius:7px;padding:1px 8px;margin-top:3px}
 
-    /* DESTINATION CARD */
-    .destination{max-width:960px;margin:36px auto;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+#dest1{--accent:#e67e22;--accent-light:#fef3e2}
+#dest2{--accent:#27ae60;--accent-light:#e8f8f0}
+#dest3{--accent:#2980b9;--accent-light:#e8f4fd}
+#dest4{--accent:#8e44ad;--accent-light:#f5eef8}
 
-    .dest-header{padding:26px 28px 18px;border-left:6px solid var(--accent);display:flex;align-items:flex-start;gap:16px}
-    .dest-num{font-size:2.4rem;font-weight:900;color:var(--accent);line-height:1;min-width:44px}
-    .dest-info h2{font-size:1.5rem;margin-bottom:4px}
-    .dest-info p{color:#777;font-size:.88rem;margin-top:3px}
-    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-    .badge{font-size:.78rem;font-weight:700;padding:3px 11px;border-radius:12px}
-    .badge-drive{background:var(--accent-light);color:var(--accent)}
-    .badge-depart{background:#fff3e0;color:#e65100}
-    .badge-car{background:#e8f5e9;color:#2e7d32}
-
-    /* 九宫格 */
-    .grid-9{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
-    .grid-9 .img-wrap{position:relative;aspect-ratio:1;overflow:hidden;background:#e8ecf0}
-    .grid-9 .img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
-    .grid-9 .img-wrap:hover img{transform:scale(1.06)}
-    .grid-9 .img-wrap .label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.55));color:#fff;font-size:.7rem;padding:14px 8px 5px;text-align:center}
-
-    /* 两列信息 */
-    .info-cols{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid #f0f0f0}
-    .info-col{padding:20px 24px}
-    .info-col:first-child{border-right:1px solid #f0f0f0}
-    .info-col h3{font-size:.92rem;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:7px}
-    .info-col h3 .icon{width:26px;height:26px;border-radius:7px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-size:13px}
-    .tag-list{display:flex;flex-wrap:wrap;gap:7px}
-    .tag{background:#f4f4f8;border-radius:9px;padding:4px 11px;font-size:.8rem;color:#555}
-    .tag.baby{background:#fff0f6;color:#c2185b}
-
-    /* 时间规划 */
-    .schedule{border-top:1px solid #f0f0f0;padding:20px 24px 24px}
-    .schedule h3{font-size:.92rem;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:7px}
-    .schedule h3 .icon{width:26px;height:26px;border-radius:7px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-size:13px}
-    .timeline{display:flex;flex-direction:column;gap:0}
-    .tl-item{display:flex;align-items:stretch;gap:0}
-    .tl-time{width:88px;min-width:88px;font-size:.78rem;font-weight:700;color:var(--accent);padding:8px 10px 8px 0;text-align:right;white-space:nowrap}
-    .tl-dot-col{display:flex;flex-direction:column;align-items:center;width:22px;min-width:22px}
-    .tl-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);margin-top:10px;flex-shrink:0}
-    .tl-line{width:2px;background:#e8e8f0;flex:1;margin:2px 0}
-    .tl-item:last-child .tl-line{display:none}
-    .tl-content{padding:6px 0 10px 10px;flex:1}
-    .tl-content .title{font-size:.88rem;font-weight:600;color:#2c3e50}
-    .tl-content .desc{font-size:.78rem;color:#888;margin-top:2px;line-height:1.5}
-    .tl-content .tip{display:inline-block;background:var(--accent-light);color:var(--accent);font-size:.72rem;border-radius:8px;padding:2px 8px;margin-top:4px}
-
-    /* COLOR VARS */
-    #dest1{--accent:#e67e22;--accent-light:#fef3e2}
-    #dest2{--accent:#27ae60;--accent-light:#e8f8f0}
-    #dest3{--accent:#2980b9;--accent-light:#e8f4fd}
-    #dest4{--accent:#8e44ad;--accent-light:#f5eef8}
-
-    footer{text-align:center;padding:36px 20px;color:#aaa;font-size:.82rem}
-
-    @media(max-width:640px){
-      .tips-grid{grid-template-columns:1fr}
-      .info-cols{grid-template-columns:1fr}
-      .info-col:first-child{border-right:none;border-bottom:1px solid #f0f0f0}
-      .hero h1{font-size:1.6rem}
-      .tl-time{width:72px;min-width:72px}
-    }
-  </style>
+footer{text-align:center;padding:34px 20px;color:#aaa;font-size:.8rem}
+@media(max-width:640px){
+  .transport,.info-cols{grid-template-columns:1fr}
+  .t-opt:first-child,.info-col:first-child{border-right:none;border-bottom:1px solid #f0f0f0}
+  .hero h1{font-size:1.55rem}
+  .ov-table{font-size:.74rem}
+}
+</style>
 </head>
 <body>
 
-<!-- HERO -->
 <div class="hero">
   <h1>🌿 北京周边亲子出行攻略</h1>
-  <p>📍 出发地：昌平区朱辛庄 &nbsp;·&nbsp; 四大备选目的地详细日程</p>
+  <p>📍 出发地：昌平区朱辛庄 &nbsp;·&nbsp; 每条路线含打车 / 租车双方案对比</p>
   <div class="meta">
-    <span>📅 下周出行</span>
-    <span>👶 亲子友好</span>
-    <span>🚗 自驾出发</span>
-    <span>⏰ 含逐小时安排</span>
+    <span>📅 下周出行</span><span>👶 亲子友好</span><span>🚗 含交通对比</span><span>⏰ 逐小时安排</span>
   </div>
 </div>
 
-<!-- NAV -->
 <nav class="nav">
-  <a href="#car">🚗 租车方案</a>
-  <a href="#tips">出行须知</a>
+  <a href="#overview">交通总览</a>
   <a href="#dest1">① 圣露庄园</a>
   <a href="#dest2">② 玉渡山</a>
   <a href="#dest3">③ 雁栖湖</a>
   <a href="#dest4">④ 金海湖</a>
 </nav>
 
-<!-- 租车方案 -->
-<div class="car-section" id="car">
-  <div class="car-inner">
-    <h2>🚗 租车方案 · 带娃出行完整指南</h2>
-
-    <!-- 平台对比 -->
-    <h3 style="font-size:.92rem;font-weight:700;margin-bottom:12px;color:#444">① 平台怎么选</h3>
-    <div class="car-platform-grid">
-
-      <div class="platform-card rec">
-        <div class="badge-rec">★ 首选推荐</div>
-        <div class="name">🏆 神州租车</div>
-        <ul>
-          <li>直营车队，车况最稳定</li>
-          <li>北京取车点最多（含昌平）</li>
-          <li>支持信用免押金</li>
-          <li>官方 App 预约儿童座椅</li>
-          <li>官网：zuche.com</li>
-        </ul>
-      </div>
-
-      <div class="platform-card">
-        <div class="name">🥈 一嗨租车</div>
-        <ul>
-          <li>全直营，服务标准统一</li>
-          <li>支持全城送车上门</li>
-          <li>支持全国免异地还车费</li>
-          <li>官网：1hai.cn</li>
-        </ul>
-      </div>
-
-      <div class="platform-card">
-        <div class="name">🥉 首汽租车</div>
-        <ul>
-          <li>国资背景，信誉好</li>
-          <li>昌平区有取车网点</li>
-          <li>车型丰富，MPV 库存充足</li>
-          <li>官网：shouqizuche.com</li>
-        </ul>
-      </div>
-
-    </div>
-
-    <!-- 车型推荐 -->
-    <h3 style="font-size:.92rem;font-weight:700;margin-bottom:12px;color:#444">② 车型怎么选</h3>
-    <div class="car-model-grid">
-
-      <div class="car-model-card top">
-        <h4>⭐ 别克 GL8 陆上公务舱</h4>
-        <div class="sub">7 座 MPV · 最推荐 · 适合 4–6 人出行</div>
-        <div class="specs">
-          <span class="spec-tag green">✓ 第二排独立座椅，宝宝好安置</span>
-          <span class="spec-tag green">✓ 空间大，婴儿车可折叠放后备箱</span>
-          <span class="spec-tag green">✓ 平稳舒适，宝宝不晕车</span>
-          <span class="spec-tag orange">日租约 500–700 元</span>
-        </div>
-      </div>
-
-      <div class="car-model-card top">
-        <h4>⭐ 丰田赛那 / 大众威然</h4>
-        <div class="sub">7 座 MPV · 次推荐 · 空间略大于 GL8</div>
-        <div class="specs">
-          <span class="spec-tag green">✓ 滑动侧门，带娃上下方便</span>
-          <span class="spec-tag green">✓ 油电混动版（赛那），省油</span>
-          <span class="spec-tag green">✓ 第二排可躺平，宝宝车内睡</span>
-          <span class="spec-tag orange">日租约 600–800 元</span>
-        </div>
-      </div>
-
-      <div class="car-model-card">
-        <h4>本田 CR-V / 丰田 RAV4</h4>
-        <div class="sub">5 座 SUV · 适合 2–3 人小家庭</div>
-        <div class="specs">
-          <span class="spec-tag green">✓ 价格实惠</span>
-          <span class="spec-tag green">✓ 后排空间够放儿童座椅</span>
-          <span class="spec-tag orange">日租约 300–450 元</span>
-          <span class="spec-tag" style="background:#fce4ec;color:#b71c1c">✗ 后备箱放婴儿车较挤</span>
-        </div>
-      </div>
-
-      <div class="car-model-card">
-        <h4>大众帕萨特 / 丰田凯美瑞</h4>
-        <div class="sub">5 座 轿车 · 仅限人少行李少时</div>
-        <div class="specs">
-          <span class="spec-tag green">✓ 最便宜</span>
-          <span class="spec-tag orange">日租约 200–300 元</span>
-          <span class="spec-tag" style="background:#fce4ec;color:#b71c1c">✗ 不推荐带婴儿车出行</span>
-          <span class="spec-tag" style="background:#fce4ec;color:#b71c1c">✗ 长途舒适度差</span>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- 费用明细 -->
-    <h3 style="font-size:.92rem;font-weight:700;margin-bottom:12px;color:#444">③ 一天费用明细（以 GL8 为例）</h3>
-    <table class="fee-table">
-      <thead><tr><th>费用项目</th><th>金额</th><th>备注</th></tr></thead>
+<!-- 交通总览 -->
+<div class="overview" id="overview">
+  <div class="overview-inner">
+    <h2>🗺️ 四条路线交通费用总览 · 从朱辛庄出发</h2>
+    <table class="ov-table">
+      <thead>
+        <tr>
+          <th>目的地</th>
+          <th>车程</th>
+          <th>建议出发</th>
+          <th class="taxi-col">🚕 打车（滴滴）往返</th>
+          <th class="car-col">🚗 租车（GL8）全天</th>
+          <th>推荐</th>
+        </tr>
+      </thead>
       <tbody>
-        <tr><td>车辆日租金</td><td>500–700 元</td><td>别克 GL8，平日价格</td></tr>
-        <tr><td>综合险 / 不计免赔险</td><td>50–80 元/天</td><td><strong>强烈建议购买</strong>，带娃出行不怕剐蹭</td></tr>
-        <tr><td>儿童安全座椅</td><td>20–30 元/天 <span class="fee-tag g">或免费</span></td><td>需提前在 App 预约，不要现场临时要</td></tr>
-        <tr><td>油费（约 150km）</td><td>约 80–100 元</td><td>四条路线往返均在 100–200km 以内</td></tr>
-        <tr><td>高速过路费</td><td>约 30–60 元</td><td>往返合计，金海湖最贵约 60 元</td></tr>
-        <tr><td>停车费</td><td>0 元</td><td>四个景区停车均免费</td></tr>
-        <tr class="total-row"><td>合计估算</td><td>约 680–970 元/天</td><td>4–6 人平摊，人均 170–240 元</td></tr>
+        <tr>
+          <td>① 圣露庄园</td>
+          <td>约 50 min</td>
+          <td>08:00</td>
+          <td class="taxi-col">约 260–360 元<div class="warn-sm">郊区返程难叫车</div></td>
+          <td class="car-col">约 700–850 元<br><span style="font-size:.72rem;color:#555">（日租+险+油+路费）</span></td>
+          <td>🚗 租车<span class="rec-badge">推荐</span></td>
+        </tr>
+        <tr>
+          <td>② 玉渡山</td>
+          <td>约 60 min</td>
+          <td>07:30</td>
+          <td class="taxi-col">约 320–440 元<div class="warn-sm">山区信号差，叫车慢</div></td>
+          <td class="car-col">约 720–880 元</td>
+          <td>🚗 租车<span class="rec-badge">推荐</span></td>
+        </tr>
+        <tr>
+          <td>③ 雁栖湖</td>
+          <td>约 70 min</td>
+          <td>07:30</td>
+          <td class="taxi-col">约 360–500 元<div class="warn-sm">返程高峰价格翻倍</div></td>
+          <td class="car-col">约 740–910 元</td>
+          <td>🚗 租车<span class="rec-badge">推荐</span></td>
+        </tr>
+        <tr>
+          <td>④ 金海湖</td>
+          <td>约 100 min</td>
+          <td>07:00</td>
+          <td class="taxi-col">约 520–700 元<div class="warn-sm">路程最远，费用最高</div></td>
+          <td class="car-col">约 800–1000 元</td>
+          <td>🚗 租车<span class="rec-badge">推荐</span></td>
+        </tr>
       </tbody>
     </table>
-
-    <!-- 预订步骤 -->
-    <h3 style="font-size:.92rem;font-weight:700;margin-bottom:14px;color:#444">④ 预订步骤（提前 3 天操作）</h3>
-    <ol class="steps-list">
-      <li><span>打开<b>神州租车 App</b>（或官网 zuche.com），注册/登录账号</span></li>
-      <li><span>取车城市选「北京」，取车地点搜索「<b>昌平</b>」或「<b>回龙观</b>」，选离朱辛庄最近的网点（步行或打车过去，约 10–15 分钟）</span></li>
-      <li><span>筛选车型：选「<b>商务/MPV</b>」→「<b>别克 GL8</b>」或「<b>丰田赛那</b>」，选好取还车时间（建议取 7:00 / 还 18:30）</span></li>
-      <li><span>附加服务勾选：<b>不计免赔险</b> ✅、<b>儿童安全座椅（0–4岁）</b> ✅</span></li>
-      <li><span>选择「<b>信用免押</b>」（芝麻分 600+ 即可），或刷卡押金 1000–3000 元</span></li>
-      <li><span>出行当天提前 15 分钟到取车点，出示驾照 + 身份证，检查车辆后拍照记录划痕，再出发</span></li>
-    </ol>
-
-    <div class="warn-box">
-      ⚠️ <b>关键提醒</b><br>
-      · 儿童安全座椅库存有限，务必提前预约，切勿临时现场要<br>
-      · 取车时仔细检查车辆外观，拍照或录视频上传 App，避免还车时纠纷<br>
-      · 金海湖路程最远（约 200km 往返），注意超出免费里程的超公里费（约 1.5 元/km）<br>
-      · 出发前确认油箱满油，返回时按要求加满油再还车
-    </div>
-
-  </div>
-</div>
-
-<!-- 出行须知 -->
-<div class="tips-box" id="tips">
-  <div class="tips-inner">
-    <h2>🗒️ 出行须知 · 从朱辛庄出发</h2>
-    <div class="tips-grid">
-
-      <div class="tip-card">
-        <h3>🚗 租车 vs 打车</h3>
-        <ul>
-          <li>带宝宝出行行李多（婴儿车/奶粉/尿布/推车），打车空间不够</li>
-          <li>宝宝回程可在车内直接午睡，时间完全自由</li>
-          <li>滴滴来回约 150–350 元，租车一天约 350–500 元，多人更划算</li>
-          <li>打车高峰期等车时间长，带娃等车体验差</li>
-        </ul>
-        <div class="verdict">✅ 强烈推荐租车 — 神州/一嗨租车，选 7 座 MPV（别克 GL8 / 丰田赛那）或 5 座 SUV，<strong>提前预约儿童安全座椅</strong></div>
-      </div>
-
-      <div class="tip-card">
-        <h3>🎒 带娃必备清单</h3>
-        <ul>
-          <li>婴儿推车（景区均有平路）</li>
-          <li>防晒：遮阳帽、防晒衣、婴儿防晒霜</li>
-          <li>备用衣物 × 2套（踩水/喂食容易湿）</li>
-          <li>午睡：便携地垫或折叠躺椅</li>
-          <li>食物：宝宝辅食 + 大人零食（玉渡山建议自带午饭）</li>
-          <li>玩具：飞盘、风筝、小桶铲（沙坑）</li>
-          <li>急救：退烧贴、创可贴、驱蚊液</li>
-        </ul>
-      </div>
-
+    <div style="margin-top:14px;font-size:.78rem;color:#888;line-height:1.8">
+      💡 <b>备注：</b>打车费为滴滴优享单程×2估算，不含等待/高峰溢价；租车费含日租、综合险、油费、高速费，按别克 GL8 计算，4–6 人出行每人约 140–250 元。<br>
+      🧒 带婴儿出行强烈推荐租车：行李多、宝宝可在车内午睡、时间完全自由，综合体验远优于打车。
     </div>
   </div>
 </div>
 
 
-<!-- ===== DEST 1 圣露庄园 ===== -->
+<!-- ======= DEST 1 圣露庄园 ======= -->
 <div class="destination" id="dest1">
   <div class="dest-header">
     <div class="dest-num">01</div>
@@ -333,28 +191,61 @@
       <h2>顺义 · 圣露庄园</h2>
       <p>欧式庄园 · 葡萄酒文化 · 萌宠亲子乐园</p>
       <div class="badges">
-        <span class="badge badge-drive">🚗 朱辛庄出发约 50 分钟</span>
-        <span class="badge badge-depart">⏰ 建议 8:00 出发</span>
-        <span class="badge badge-car">🅿️ 免费停车场</span>
+        <span class="badge badge-drive">🚗 约 50 分钟</span>
+        <span class="badge badge-tip">⏰ 建议 8:00 出发</span>
       </div>
     </div>
   </div>
 
   <div class="grid-9">
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/450392a26fc1bc2acf6c721bd8339b70c5.jpg" alt="圣露庄园航拍"/><div class="label">庄园航拍全景</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/e0ddbc1ecfc07d22c1c1236174631d61c5.jpg" alt="庄园湖面"/><div class="label">湖面大草坪</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/9cf2068d672fec67928cbc0e8ea5075ac5.jpg" alt="草坪湖边"/><div class="label">湖边骑行打卡</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/b45c602ffd10709a5e3093d16bf08abdc5.jpg" alt="葡萄园"/><div class="label">葡萄园采摘</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/b3ffb1980eeef18b2f63a3e286304702c5.jpg" alt="湖边木屋"/><div class="label">湖边恒温木屋</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/56299f3daef850f08f160232411c0bdcc5.jpg" alt="天幕野餐"/><div class="label">天幕野餐区</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/0c4982f2b44c6b909649b44521e74b78c5.jpg" alt="草坪椅"/><div class="label">草坪休闲区</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/298328b52e0b2117cedd86e852d364ccc5.jpg" alt="庄园湖景"/><div class="label">环湖小火车沿线</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/1dfe9828ded254ba708d1a67c6bdd34fc5.jpg" alt="品酒室"/><div class="label">红酒品鉴室</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/450392a26fc1bc2acf6c721bd8339b70c5.jpg" alt=""/><div class="lb">庄园航拍全景</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/e0ddbc1ecfc07d22c1c1236174631d61c5.jpg" alt=""/><div class="lb">湖面大草坪</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/9cf2068d672fec67928cbc0e8ea5075ac5.jpg" alt=""/><div class="lb">湖边打卡</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/b45c602ffd10709a5e3093d16bf08abdc5.jpg" alt=""/><div class="lb">葡萄园采摘</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/b3ffb1980eeef18b2f63a3e286304702c5.jpg" alt=""/><div class="lb">湖边恒温木屋</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/56299f3daef850f08f160232411c0bdcc5.jpg" alt=""/><div class="lb">天幕野餐区</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/0c4982f2b44c6b909649b44521e74b78c5.jpg" alt=""/><div class="lb">草坪休闲区</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/298328b52e0b2117cedd86e852d364ccc5.jpg" alt=""/><div class="lb">环湖小火车沿线</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/image/1dfe9828ded254ba708d1a67c6bdd34fc5.jpg" alt=""/><div class="lb">红酒品鉴室</div></div>
+  </div>
+
+  <!-- 交通对比 -->
+  <div class="transport">
+    <div class="t-opt">
+      <div class="t-head">🚕 打车方案（滴滴）</div>
+      <div class="t-rows">
+        <div class="t-row"><span class="t-label">车型</span><span class="t-val">滴滴优享 / 豪华，可要求备儿童座椅</span></div>
+        <div class="t-row"><span class="t-label">去程费用</span><span class="t-val">约 130–180 元（约 50km）</span></div>
+        <div class="t-row"><span class="t-label">返程费用</span><span class="t-val">约 130–180 元（建议提前预约，避免叫不到）</span></div>
+        <div class="t-row"><span class="t-label">往返合计</span><span class="t-val"><b>约 260–360 元</b></span></div>
+        <hr class="t-divider"/>
+        <div class="t-pro">✓ 适合只有 2–3 人，行李少的情况</div>
+        <div class="t-pro">✓ 省去开车疲劳，大人可以在车上休息</div>
+        <div class="t-con">✗ 顺义郊区返程叫车较慢，高峰加价</div>
+        <div class="t-con">✗ 婴儿推车等大件行李放不下</div>
+        <div class="t-con">✗ 宝宝无法在车内午睡过渡</div>
+      </div>
+    </div>
+    <div class="t-opt t-rec">
+      <div class="t-head">🚗 租车方案 <span class="t-rec-tag">⭐ 推荐</span></div>
+      <div class="t-rows">
+        <div class="t-row"><span class="t-label">推荐车型</span><span class="t-val">别克 GL8（7座）/ 本田 CR-V（5座，人少时）</span></div>
+        <div class="t-row"><span class="t-label">日租 + 险</span><span class="t-val">GL8 约 550–780 元 / CR-V 约 350–500 元</span></div>
+        <div class="t-row"><span class="t-label">油费</span><span class="t-val">约 60 元（往返约 100km）</span></div>
+        <div class="t-row"><span class="t-label">高速过路费</span><span class="t-val">约 20 元（往返）</span></div>
+        <div class="t-row"><span class="t-label">GL8 合计</span><span class="t-val"><b>约 630–860 元</b>（4 人约 160–215 元/人）</span></div>
+        <hr class="t-divider"/>
+        <div class="t-pro">✓ 行李空间大，婴儿车/推车轻松放</div>
+        <div class="t-pro">✓ 宝宝可在车内哄睡，返程不耽误</div>
+        <div class="t-pro">✓ 时间完全自主，想几点走就几点走</div>
+        <div class="t-con">✗ 需要提前 3 天预约，当日取车</div>
+      </div>
+    </div>
   </div>
 
   <div class="info-cols">
     <div class="info-col">
-      <h3><span class="icon">🎯</span> 游玩项目</h3>
+      <h3><span class="ic">🎯</span> 游玩项目</h3>
       <div class="tag-list">
         <span class="tag">🥏 大草坪飞盘</span><span class="tag">🪁 放风筝</span>
         <span class="tag">🏰 欧式城堡打卡</span><span class="tag">🍇 葡萄采摘</span>
@@ -364,7 +255,7 @@
       </div>
     </div>
     <div class="info-col">
-      <h3><span class="icon">👶</span> 母婴配套</h3>
+      <h3><span class="ic">👶</span> 母婴配套</h3>
       <div class="tag-list">
         <span class="tag baby">🛺 全园平缓塑胶路，婴儿车畅行</span>
         <span class="tag baby">🏠 室内恒温木屋 + 专属母婴室</span>
@@ -376,64 +267,24 @@
   </div>
 
   <div class="schedule">
-    <h3><span class="icon">📅</span> 详细时间规划</h3>
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-time">08:00</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🚗 从朱辛庄出发</div><div class="desc">走机场高速 → 顺平路，导航至崔各庄圣露庄园，约 50 分钟</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">08:50</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🅿️ 停车入园</div><div class="desc">免费停车场，领取婴儿车可通行地图，确认当日活动时刻表</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">09:00–10:00</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🥏 大草坪飞盘 / 放风筝</div><div class="desc">早晨最凉快，宝宝精力最足，8000㎡草坪尽情玩</div><span class="tip">宝宝黄金活动时段</span></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">10:00–11:00</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🦙 萌宠园 + 无动力乐园</div><div class="desc">喂小羊/小鹿/羊驼，之后去沙坑、蹦床、大滑梯（全程树荫遮盖）</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">11:00–11:40</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🏰 欧式城堡 + 葡萄长廊打卡</div><div class="desc">最上镜地点，橡木酒桶装饰，适合全家合影</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">11:40–12:10</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🚂 环湖小火车</div><div class="desc">带宝宝乘坐小火车绕湖一圈，宝宝坐车不哭</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">12:10–13:30</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🍖 自助烤全羊午餐</div><div class="desc">室内餐厅，空调凉快，宝宝吃辅食/母乳，大人享用自助烤全羊</div><span class="tip">建议提前预约座位</span></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">13:30–15:00</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">💤 宝宝室内午睡</div><div class="desc">恒温木屋内午睡，大人趁机 🍷 葡萄园漫步 + 红酒品鉴</div><span class="tip">宝宝午睡保护时段</span></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">15:00–16:30</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🏕️ 湖边天幕下午茶</div><div class="desc">傍晚凉风起，湖边摆天幕，宝宝醒来再玩一轮沙坑/草坪</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">16:30</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🚗 返回朱辛庄</div><div class="desc">约 17:20 到家，避开晚高峰</div></div>
-      </div>
+    <h3><span class="ic">📅</span> 详细时间规划</h3>
+    <div class="tl">
+      <div class="tli"><div class="tli-time">08:00</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🚗 从朱辛庄出发</div><div class="tli-desc">走机场高速 → 顺平路，导航至崔各庄圣露庄园，约 50 分钟</div></div></div>
+      <div class="tli"><div class="tli-time">08:50</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🅿️ 停车入园</div><div class="tli-desc">免费停车场，领取婴儿车可通行地图，确认当日活动时刻表</div></div></div>
+      <div class="tli"><div class="tli-time">09:00–10:00</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🥏 大草坪飞盘 / 放风筝</div><div class="tli-desc">早晨最凉快，宝宝精力充沛，8000㎡草坪尽情玩</div><span class="tli-tip">宝宝黄金时段</span></div></div>
+      <div class="tli"><div class="tli-time">10:00–11:00</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🦙 萌宠园 + 无动力乐园</div><div class="tli-desc">喂小羊/小鹿/羊驼，之后去沙坑、蹦床、大滑梯（全程树荫）</div></div></div>
+      <div class="tli"><div class="tli-time">11:00–11:40</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🏰 欧式城堡 + 葡萄长廊打卡</div><div class="tli-desc">最上镜地点，橡木酒桶装饰，全家合影</div></div></div>
+      <div class="tli"><div class="tli-time">11:40–12:10</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🚂 环湖小火车</div><div class="tli-desc">带宝宝乘坐小火车绕湖一圈，宝宝坐车不哭</div></div></div>
+      <div class="tli"><div class="tli-time">12:10–13:30</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🍖 自助烤全羊午餐</div><div class="tli-desc">室内空调餐厅，宝宝吃辅食，大人享用烤全羊</div><span class="tli-warn">⚠️ 建议提前预约座位</span></div></div>
+      <div class="tli"><div class="tli-time">13:30–15:00</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">💤 宝宝室内午睡</div><div class="tli-desc">恒温木屋内午睡，大人趁机 🍷 葡萄园漫步 + 红酒品鉴</div><span class="tli-tip">宝宝午睡保护时段</span></div></div>
+      <div class="tli"><div class="tli-time">15:00–16:30</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🏕️ 湖边天幕下午茶</div><div class="tli-desc">傍晚凉风起，湖边摆天幕，宝宝醒来再玩一轮沙坑/草坪</div></div></div>
+      <div class="tli"><div class="tli-time">16:30</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🚗 返回朱辛庄</div><div class="tli-desc">约 17:20 到家，避开晚高峰</div></div></div>
     </div>
   </div>
 </div>
 
 
-<!-- ===== DEST 2 玉渡山 ===== -->
+<!-- ======= DEST 2 玉渡山 ======= -->
 <div class="destination" id="dest2">
   <div class="dest-header">
     <div class="dest-num">02</div>
@@ -441,38 +292,69 @@
       <h2>延庆 · 玉渡山</h2>
       <p>高山草甸 · 林间溪流 · 忘忧湖木栈道</p>
       <div class="badges">
-        <span class="badge badge-drive">🚗 朱辛庄出发约 60 分钟（G6 京藏高速）</span>
-        <span class="badge badge-depart">⏰ 建议 7:30 出发</span>
-        <span class="badge badge-car">🌡️ 海拔 900m，夏天约 25°C</span>
+        <span class="badge badge-drive">🚗 约 60 分钟（G6 高速）</span>
+        <span class="badge badge-tip">⏰ 建议 7:30 出发</span>
+        <span class="badge" style="background:#e3f2fd;color:#1565c0">🌡️ 海拔 900m，夏天约 25°C</span>
       </div>
     </div>
   </div>
 
   <div class="grid-9">
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/9c1f43ca7d97d610214856aff2e4251f.png" alt="盘山公路"/><div class="label">进山公路</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/d86728e96d8edd9c13751ca906ee6961.png" alt="高山草坪"/><div class="label">高山大草坪</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/ae3861d2ef24af185e321cf058893bd8.png" alt="草坪活动"/><div class="label">草坪野餐</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/32ba313c110497a61266e130010d8a66.png" alt="忘忧湖"/><div class="label">忘忧湖</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/d3d54a59fd3eb0da521e06df0b3beea4.png" alt="湖畔漫步"/><div class="label">湖畔漫步</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/54f2bd1222b8b1480b9d6ecf96817273.png" alt="游船"/><div class="label">湖面脚踏船</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/b5e35cc31b4e6d2d2ad150ec4f2b2380.png" alt="溪流瀑布"/><div class="label">溪流瀑布</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/dc174b2205e2a715f270e8afe5681330.png" alt="林间步道"/><div class="label">林间步道</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/9b61eca5be48e16410303e898dba83b5.png" alt="浅溪"/><div class="label">浅溪踩水</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/9c1f43ca7d97d610214856aff2e4251f.png" alt=""/><div class="lb">进山公路</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/d86728e96d8edd9c13751ca906ee6961.png" alt=""/><div class="lb">高山大草坪</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/ae3861d2ef24af185e321cf058893bd8.png" alt=""/><div class="lb">草坪野餐</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/32ba313c110497a61266e130010d8a66.png" alt=""/><div class="lb">忘忧湖</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/d3d54a59fd3eb0da521e06df0b3beea4.png" alt=""/><div class="lb">湖畔漫步</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/54f2bd1222b8b1480b9d6ecf96817273.png" alt=""/><div class="lb">湖面脚踏船</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/b5e35cc31b4e6d2d2ad150ec4f2b2380.png" alt=""/><div class="lb">溪流瀑布</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/dc174b2205e2a715f270e8afe5681330.png" alt=""/><div class="lb">林间步道</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/9b61eca5be48e16410303e898dba83b5.png" alt=""/><div class="lb">浅溪踩水</div></div>
+  </div>
+
+  <div class="transport">
+    <div class="t-opt">
+      <div class="t-head">🚕 打车方案（滴滴）</div>
+      <div class="t-rows">
+        <div class="t-row"><span class="t-label">车型</span><span class="t-val">滴滴优享 / 豪华</span></div>
+        <div class="t-row"><span class="t-label">去程费用</span><span class="t-val">约 160–220 元（约 60km）</span></div>
+        <div class="t-row"><span class="t-label">返程费用</span><span class="t-val">约 160–220 元（山区信号差，提前预约）</span></div>
+        <div class="t-row"><span class="t-label">往返合计</span><span class="t-val"><b>约 320–440 元</b></span></div>
+        <hr class="t-divider"/>
+        <div class="t-pro">✓ 不用自己开山路，省心</div>
+        <div class="t-con">✗ 山区手机信号差，叫车困难</div>
+        <div class="t-con">✗ 景区内无出租车，出行不灵活</div>
+        <div class="t-con">✗ 自带食物多时行李放不下</div>
+      </div>
+    </div>
+    <div class="t-opt t-rec">
+      <div class="t-head">🚗 租车方案 <span class="t-rec-tag">⭐ 强烈推荐</span></div>
+      <div class="t-rows">
+        <div class="t-row"><span class="t-label">推荐车型</span><span class="t-val">别克 GL8（7座）或 本田 CR-V（5座）</span></div>
+        <div class="t-row"><span class="t-label">日租 + 险</span><span class="t-val">GL8 约 550–780 元</span></div>
+        <div class="t-row"><span class="t-label">油费</span><span class="t-val">约 70 元（往返约 120km）</span></div>
+        <div class="t-row"><span class="t-label">高速过路费</span><span class="t-val">约 30 元（往返，G6 高速）</span></div>
+        <div class="t-row"><span class="t-label">GL8 合计</span><span class="t-val"><b>约 650–880 元</b>（4 人约 163–220 元/人）</span></div>
+        <hr class="t-divider"/>
+        <div class="t-pro">✓ 自带午饭食材/野餐装备，后备箱装得下</div>
+        <div class="t-pro">✓ 山区信号差也不怕，随时可开车走</div>
+        <div class="t-pro">✓ 宝宝下山在车内哄睡，完美衔接</div>
+        <div class="t-con">✗ 山路需谨慎驾驶，限速 40km/h</div>
+      </div>
+    </div>
   </div>
 
   <div class="info-cols">
     <div class="info-col">
-      <h3><span class="icon">🎯</span> 游玩项目</h3>
+      <h3><span class="ic">🎯</span> 游玩项目</h3>
       <div class="tag-list">
         <span class="tag">🌾 高山草甸野餐</span><span class="tag">💧 林间浅溪踩水</span>
         <span class="tag">🚶 忘忧湖木栈道</span><span class="tag">🥾 平缓休闲徒步</span>
         <span class="tag">🌊 瀑布纳凉</span><span class="tag">🥏 草坪飞盘</span>
-        <span class="tag">📸 山野拍照</span><span class="tag">⛵ 湖边脚踏船</span>
-        <span class="tag">🎲 林间桌游</span>
+        <span class="tag">📸 山野拍照</span><span class="tag">⛵ 湖边脚踏船</span><span class="tag">🎲 林间桌游</span>
       </div>
     </div>
     <div class="info-col">
-      <h3><span class="icon">👶</span> 母婴配套</h3>
+      <h3><span class="ic">👶</span> 母婴配套</h3>
       <div class="tag-list">
         <span class="tag baby">🌲 全程树荫避暑，步道无陡坡</span>
         <span class="tag baby">🏛️ 游客中心母婴室</span>
@@ -484,64 +366,24 @@
   </div>
 
   <div class="schedule">
-    <h3><span class="icon">📅</span> 详细时间规划</h3>
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-time">07:30</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🚗 从朱辛庄出发</div><div class="desc">走 G6 京藏高速 → 延崇高速，全程约 60 分钟，<strong>建议自带早餐食物</strong></div><span class="tip">昌平 → 延庆方向，几乎无早高峰</span></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">08:30</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🅿️ 停车 · 高山草甸入园</div><div class="desc">景区门口停车，步行或摆渡车约 10 分钟至草甸，25°C 的早晨极度舒适</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">08:30–09:30</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🌾 高山草甸野餐 + 飞盘</div><div class="desc">铺垫野餐，吃自带早餐，宝宝爬草坪，大人飞盘、拍照；蓝天白云视野开阔</div><span class="tip">最出片的场景</span></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">09:30–10:30</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🚶 忘忧湖木栈道漫步</div><div class="desc">全程平缓无台阶，婴儿车可推，湖面清澈映山色，步道两侧有树荫</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">10:30–11:00</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">⛵ 湖面脚踏船</div><div class="desc">双人脚踏船，宝宝坐中间，忘忧湖上荡漾，约 30 分钟</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">11:00–12:00</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">💧 林间浅溪踩水</div><div class="desc">水深 10–20cm，溪底光滑，宝宝赤脚踩水，大人可坐石头上乘凉</div><span class="tip">宝宝最爱！强烈推荐备换洗衣服</span></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">12:00–13:00</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🥗 草坪午餐</div><div class="desc">建议自带食物（景区餐厅少且贵），找树荫铺垫，宝宝吃辅食，山风徐来</div><span class="tip">⚠️ 务必自备充足食物和饮水</span></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">13:00–14:30</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">💤 草坪午睡</div><div class="desc">树荫下铺垫，自然凉爽，蚊虫极少（海拔高），宝宝睡，大人 🎲 玩桌游</div><span class="tip">全四条线路最佳户外午睡场景</span></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">14:30–15:30</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🌊 瀑布纳凉 + 山野拍照</div><div class="desc">沿步道前往瀑布，瀑布前气温骤降 5°C，天然 air conditioner</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">15:30</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🚗 下山返回朱辛庄</div><div class="desc">约 16:30 到家，全天最轻松的一条线路</div></div>
-      </div>
+    <h3><span class="ic">📅</span> 详细时间规划</h3>
+    <div class="tl">
+      <div class="tli"><div class="tli-time">07:30</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🚗 从朱辛庄出发</div><div class="tli-desc">走 G6 京藏高速 → 延崇高速，全程约 60 分钟，建议自带早餐食物上车吃</div><span class="tli-tip">昌平→延庆，几乎无早高峰</span></div></div>
+      <div class="tli"><div class="tli-time">08:30</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🅿️ 停车 · 高山草甸入园</div><div class="tli-desc">门口停车，摆渡车约 10 分钟至草甸，25°C 的早晨极度舒适</div></div></div>
+      <div class="tli"><div class="tli-time">08:30–09:30</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🌾 高山草甸野餐 + 飞盘</div><div class="tli-desc">铺垫野餐，吃自带早餐，宝宝爬草坪，大人飞盘、拍照；蓝天白云视野极开阔</div><span class="tli-tip">最出片的场景</span></div></div>
+      <div class="tli"><div class="tli-time">09:30–10:30</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🚶 忘忧湖木栈道漫步</div><div class="tli-desc">全程平缓无台阶，婴儿车可推，湖面清澈映山色</div></div></div>
+      <div class="tli"><div class="tli-time">10:30–11:00</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">⛵ 湖面脚踏船</div><div class="tli-desc">双人脚踏船，宝宝坐中间，约 30 分钟</div></div></div>
+      <div class="tli"><div class="tli-time">11:00–12:00</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">💧 林间浅溪踩水</div><div class="tli-desc">水深 10–20cm，溪底光滑，宝宝赤脚踩水</div><span class="tli-tip">宝宝最爱！备换洗衣服</span></div></div>
+      <div class="tli"><div class="tli-time">12:00–13:00</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🥗 草坪午餐</div><div class="tli-desc">景区餐厅少且贵，强烈建议自带食物，树荫下铺垫，宝宝吃辅食</div><span class="tli-warn">⚠️ 务必自备充足食物和饮水</span></div></div>
+      <div class="tli"><div class="tli-time">13:00–14:30</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">💤 草坪午睡</div><div class="tli-desc">树荫下铺垫，自然凉爽，蚊虫极少（海拔高），宝宝睡，大人 🎲 桌游</div><span class="tli-tip">四条线路最佳户外午睡场景</span></div></div>
+      <div class="tli"><div class="tli-time">14:30–15:30</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🌊 瀑布纳凉 + 山野拍照</div><div class="tli-desc">瀑布前气温骤降 5°C，天然 air conditioner</div></div></div>
+      <div class="tli"><div class="tli-time">15:30</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🚗 下山返回朱辛庄</div><div class="tli-desc">约 16:30 到家，全天最轻松路线</div></div></div>
     </div>
   </div>
 </div>
 
 
-<!-- ===== DEST 3 雁栖湖 ===== -->
+<!-- ======= DEST 3 雁栖湖 ======= -->
 <div class="destination" id="dest3">
   <div class="dest-header">
     <div class="dest-num">03</div>
@@ -549,28 +391,59 @@
       <h2>怀柔 · 雁栖湖</h2>
       <p>APEC 地标 · 画舫游船 · 13km 环湖慢行</p>
       <div class="badges">
-        <span class="badge badge-drive">🚗 朱辛庄出发约 70 分钟</span>
-        <span class="badge badge-depart">⏰ 建议 7:30 出发</span>
-        <span class="badge badge-car">🚌 园内免费观光电瓶车</span>
+        <span class="badge badge-drive">🚗 约 70 分钟</span>
+        <span class="badge badge-tip">⏰ 建议 7:30 出发</span>
+        <span class="badge" style="background:#e3f2fd;color:#1565c0">🚌 园内观光电瓶车随上随下</span>
       </div>
     </div>
   </div>
 
   <div class="grid-9">
-    <div class="img-wrap"><img src="https://r1.visitbeijing.com.cn/vbj-s/2019/0619/20190619021930705.jpg" alt="俯瞰雁栖湖"/><div class="label">俯瞰雁栖湖</div></div>
-    <div class="img-wrap"><img src="https://r1.visitbeijing.com.cn/vbj-s/2017/1110/20171110123258881.jpg" alt="湖面"/><div class="label">湖面山水</div></div>
-    <div class="img-wrap"><img src="https://r1.visitbeijing.com.cn/vbj-s/2017/1110/20171110123229750.jpg" alt="环湖步道"/><div class="label">环湖步道</div></div>
-    <div class="img-wrap"><img src="https://r1.visitbeijing.com.cn/vbj-s/2017/1110/20171110123245861.jpg" alt="湖岸风光"/><div class="label">湖岸风光</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/331d2e3d2351519bf3a5ae03ac832d21u5.jpg" alt="日出东方"/><div class="label">APEC 日出东方</div></div>
-    <div class="img-wrap"><img src="https://r1.visitbeijing.com.cn/vbj-s/2015/0512/20150512051544243.png" alt="核心岛"/><div class="label">核心岛鸟瞰</div></div>
-    <div class="img-wrap"><img src="https://r1.visitbeijing.com.cn/vbj-s/2015/0512/20150512051546242.png" alt="地标建筑"/><div class="label">地标建筑</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/331d2e3d2351519bf3a5ae03ac832d21u5.jpg" alt="日出东方打卡"/><div class="label">APEC 打卡点</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/bb31858fad2ca0e1b47fdaed9262a242u5.jpg" alt="雁栖湖秋色"/><div class="label">湖畔四季美景</div></div>
+    <div class="iw"><img src="https://r1.visitbeijing.com.cn/vbj-s/2019/0619/20190619021930705.jpg" alt=""/><div class="lb">俯瞰雁栖湖</div></div>
+    <div class="iw"><img src="https://r1.visitbeijing.com.cn/vbj-s/2017/1110/20171110123258881.jpg" alt=""/><div class="lb">湖面山水</div></div>
+    <div class="iw"><img src="https://r1.visitbeijing.com.cn/vbj-s/2017/1110/20171110123229750.jpg" alt=""/><div class="lb">环湖步道</div></div>
+    <div class="iw"><img src="https://r1.visitbeijing.com.cn/vbj-s/2017/1110/20171110123245861.jpg" alt=""/><div class="lb">湖岸风光</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/331d2e3d2351519bf3a5ae03ac832d21u5.jpg" alt=""/><div class="lb">APEC 日出东方</div></div>
+    <div class="iw"><img src="https://r1.visitbeijing.com.cn/vbj-s/2015/0512/20150512051544243.png" alt=""/><div class="lb">核心岛鸟瞰</div></div>
+    <div class="iw"><img src="https://r1.visitbeijing.com.cn/vbj-s/2015/0512/20150512051539786.png" alt=""/><div class="lb">APEC 地标</div></div>
+    <div class="iw"><img src="https://r1.visitbeijing.com.cn/vbj-s/2015/0512/20150512051546242.png" alt=""/><div class="lb">会议中心全景</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/bb31858fad2ca0e1b47fdaed9262a242u5.jpg" alt=""/><div class="lb">湖畔四季美景</div></div>
+  </div>
+
+  <div class="transport">
+    <div class="t-opt">
+      <div class="t-head">🚕 打车方案（滴滴）</div>
+      <div class="t-rows">
+        <div class="t-row"><span class="t-label">车型</span><span class="t-val">滴滴优享 / 豪华</span></div>
+        <div class="t-row"><span class="t-label">去程费用</span><span class="t-val">约 180–250 元（约 70km）</span></div>
+        <div class="t-row"><span class="t-label">返程费用</span><span class="t-val">约 180–250 元（周末返程高峰涨价明显）</span></div>
+        <div class="t-row"><span class="t-label">往返合计</span><span class="t-val"><b>约 360–500 元</b></span></div>
+        <hr class="t-divider"/>
+        <div class="t-pro">✓ 不用开车，全程放松</div>
+        <div class="t-con">✗ 怀柔景区下午返程叫车难，加价严重</div>
+        <div class="t-con">✗ 环湖骑行后行李/自行车无处放</div>
+        <div class="t-con">✗ 宝宝午睡被叫车打断</div>
+      </div>
+    </div>
+    <div class="t-opt t-rec">
+      <div class="t-head">🚗 租车方案 <span class="t-rec-tag">⭐ 推荐</span></div>
+      <div class="t-rows">
+        <div class="t-row"><span class="t-label">推荐车型</span><span class="t-val">别克 GL8（7座）</span></div>
+        <div class="t-row"><span class="t-label">日租 + 险</span><span class="t-val">约 550–780 元</span></div>
+        <div class="t-row"><span class="t-label">油费</span><span class="t-val">约 80 元（往返约 140km）</span></div>
+        <div class="t-row"><span class="t-label">高速过路费</span><span class="t-val">约 40 元（往返，京承高速）</span></div>
+        <div class="t-row"><span class="t-label">GL8 合计</span><span class="t-val"><b>约 670–900 元</b>（4 人约 168–225 元/人）</span></div>
+        <hr class="t-divider"/>
+        <div class="t-pro">✓ 下午宝宝困了直接回车里睡</div>
+        <div class="t-pro">✓ 不受怀柔返程叫车难影响</div>
+        <div class="t-pro">✓ 骑行装备、野餐垫等放后备箱</div>
+      </div>
+    </div>
   </div>
 
   <div class="info-cols">
     <div class="info-col">
-      <h3><span class="icon">🎯</span> 游玩项目</h3>
+      <h3><span class="ic">🎯</span> 游玩项目</h3>
       <div class="tag-list">
         <span class="tag">🚴 环湖骑行</span><span class="tag">🛥️ 画舫游船</span>
         <span class="tag">🛶 皮划艇 / 龙舟</span><span class="tag">🏔️ 西山观景步道</span>
@@ -579,7 +452,7 @@
       </div>
     </div>
     <div class="info-col">
-      <h3><span class="icon">👶</span> 母婴配套</h3>
+      <h3><span class="ic">👶</span> 母婴配套</h3>
       <div class="tag-list">
         <span class="tag baby">♿ 环湖全程无障碍平路</span>
         <span class="tag baby">🚌 观光电瓶车随上随下</span>
@@ -591,64 +464,24 @@
   </div>
 
   <div class="schedule">
-    <h3><span class="icon">📅</span> 详细时间规划</h3>
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-time">07:30</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🚗 从朱辛庄出发</div><div class="desc">走京承高速 → 怀柔出口，约 70 分钟，导航至雁栖湖南门停车场</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">08:40</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🅿️ 南门入园 · 租自行车/电瓶车</div><div class="desc">南门租赁点租自行车（含儿童座椅款）或坐观光电瓶车，景区 5 处租赁点均可还</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">08:40–10:00</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🚴 环湖骑行</div><div class="desc">13km 环湖慢行道，全程平坦无坡，宝宝坐前置儿童座椅，沿途湖景+山景</div><span class="tip">不骑车的宝宝可坐观光电瓶车跟队</span></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">10:00–11:30</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🛥️ 画舫游船 / 皮划艇</div><div class="desc">画舫 40 分钟绕湖；或 2 人皮划艇 1 人带娃 1 人划，水域宽阔安全</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">11:30–12:00</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🏛️ APEC 日出东方地标打卡</div><div class="desc">著名鸟蛋形建筑，2014 年 APEC 峰会场馆，近距离拍照留念</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">12:00–13:30</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">☕ 湖畔餐厅午餐</div><div class="desc">景区内多家湖畔餐厅，推荐老圃问槐公园附近的茶饮区，边用餐边看湖景</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">13:30–14:30</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">💤 宝宝午睡</div><div class="desc">室内餐厅或树荫椅，多处休息点位，随时可安置宝宝</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">14:30–15:30</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🏔️ 西山观景步道</div><div class="desc">步道约 30 分钟登顶，可俯瞰雁栖湖核心岛全景，宝宝推车到山脚等候也可</div><span class="tip">登顶视角极佳，强烈推荐</span></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">15:30–16:00</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🥌 旱地冰壶 / 草坪游戏</div><div class="desc">全家趣味收尾活动</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">16:00</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🚗 返回朱辛庄</div><div class="desc">约 17:10 到家</div></div>
-      </div>
+    <h3><span class="ic">📅</span> 详细时间规划</h3>
+    <div class="tl">
+      <div class="tli"><div class="tli-time">07:30</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🚗 从朱辛庄出发</div><div class="tli-desc">走京承高速 → 怀柔出口，约 70 分钟，导航至雁栖湖南门停车场</div></div></div>
+      <div class="tli"><div class="tli-time">08:40</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🅿️ 南门入园 · 租自行车</div><div class="tli-desc">南门租赁点租自行车（含儿童座椅款），或坐观光电瓶车，5 处网点均可还</div></div></div>
+      <div class="tli"><div class="tli-time">08:40–10:00</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🚴 环湖骑行</div><div class="tli-desc">13km 平坦骑行道，宝宝坐前置儿童座椅，沿途湖景 + 山景</div><span class="tli-tip">不骑车者可坐观光电瓶车跟队</span></div></div>
+      <div class="tli"><div class="tli-time">10:00–11:30</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🛥️ 画舫游船 / 皮划艇</div><div class="tli-desc">画舫 40 分钟绕湖，或 2 人皮划艇 1 人带娃 1 人划</div></div></div>
+      <div class="tli"><div class="tli-time">11:30–12:00</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🏛️ APEC 日出东方地标打卡</div><div class="tli-desc">著名鸟蛋形建筑，2014 年峰会场馆，近距离拍照留念</div></div></div>
+      <div class="tli"><div class="tli-time">12:00–13:30</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">☕ 湖畔餐厅午餐</div><div class="tli-desc">推荐老圃问槐公园附近茶饮区，边用餐边看湖景</div></div></div>
+      <div class="tli"><div class="tli-time">13:30–14:30</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">💤 宝宝午睡</div><div class="tli-desc">室内餐厅或树荫椅，多处休息点位密集</div></div></div>
+      <div class="tli"><div class="tli-time">14:30–15:30</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🏔️ 西山观景步道</div><div class="tli-desc">约 30 分钟登顶，俯瞰雁栖湖核心岛全景，宝宝可留在山脚等候</div><span class="tli-tip">登顶视角极佳，强烈推荐</span></div></div>
+      <div class="tli"><div class="tli-time">15:30–16:00</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🥌 旱地冰壶 / 草坪趣味游戏</div><div class="tli-desc">全家趣味收尾</div></div></div>
+      <div class="tli"><div class="tli-time">16:00</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🚗 返回朱辛庄</div><div class="tli-desc">约 17:10 到家</div></div></div>
     </div>
   </div>
 </div>
 
 
-<!-- ===== DEST 4 金海湖 ===== -->
+<!-- ======= DEST 4 金海湖 ======= -->
 <div class="destination" id="dest4">
   <div class="dest-header">
     <div class="dest-num">04</div>
@@ -656,28 +489,60 @@
       <h2>平谷 · 金海湖</h2>
       <p>京郊最大水面 · 碧波岛打卡 · 湖鲜美食</p>
       <div class="badges">
-        <span class="badge badge-drive">🚗 朱辛庄出发约 100 分钟（京承高速）</span>
-        <span class="badge badge-depart">⏰ 建议 7:00 出发（最远，务必早走）</span>
-        <span class="badge badge-car">🎟️ 1.2m 以下婴儿免票</span>
+        <span class="badge badge-drive">🚗 约 100 分钟（最远）</span>
+        <span class="badge badge-tip">⏰ 建议 7:00 出发（务必早走）</span>
+        <span class="badge" style="background:#e8f5e9;color:#1b5e20">🎟️ 1.2m 以下婴儿免票</span>
       </div>
     </div>
   </div>
 
   <div class="grid-9">
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/c9ff126c8c7958b5e34a1c4994bb930c.png" alt="碧波岛"/><div class="label">碧波岛全景</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/3f3c12839f9d27a01890ad58f90848f7.png" alt="锯齿崖"/><div class="label">锯齿崖山地</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/48b1b830549a655d3b8d00cb080685d3.png" alt="游船"/><div class="label">双层环湖游船</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/798d4e31290b52a23e10240e9dffc783.png" alt="帆船"/><div class="label">帆船</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/f919972454acba5b1f3a9fd8c7eb6f5f.png" alt="快艇"/><div class="label">皮划艇 / 快艇</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/8f3aaab9b748d4433639531bf8f97293.png" alt="脚踏船"/><div class="label">亲子电瓶船</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/5b36aea0aa5d3a7e83d81d09a644e788.png" alt="农家菜"/><div class="label">湖鲜正餐</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/4a9f26fced3a2bba82f09182515ae93c.png" alt="帐篷"/><div class="label">天幕围炉</div></div>
-    <div class="img-wrap"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/4537ab3ae56b81b8011b3d233d51afbc.png" alt="草坪"/><div class="label">湖畔大草坪</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/c9ff126c8c7958b5e34a1c4994bb930c.png" alt=""/><div class="lb">碧波岛全景</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/3f3c12839f9d27a01890ad58f90848f7.png" alt=""/><div class="lb">锯齿崖山地</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/48b1b830549a655d3b8d00cb080685d3.png" alt=""/><div class="lb">双层环湖游船</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/798d4e31290b52a23e10240e9dffc783.png" alt=""/><div class="lb">帆船</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/f919972454acba5b1f3a9fd8c7eb6f5f.png" alt=""/><div class="lb">皮划艇 / 快艇</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/8f3aaab9b748d4433639531bf8f97293.png" alt=""/><div class="lb">亲子电瓶船</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/5b36aea0aa5d3a7e83d81d09a644e788.png" alt=""/><div class="lb">湖鲜正餐</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/4a9f26fced3a2bba82f09182515ae93c.png" alt=""/><div class="lb">天幕围炉</div></div>
+    <div class="iw"><img src="https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/4537ab3ae56b81b8011b3d233d51afbc.png" alt=""/><div class="lb">湖畔大草坪</div></div>
+  </div>
+
+  <div class="transport">
+    <div class="t-opt">
+      <div class="t-head">🚕 打车方案（滴滴）</div>
+      <div class="t-rows">
+        <div class="t-row"><span class="t-label">车型</span><span class="t-val">滴滴豪华 / 优享（路程远，建议豪华）</span></div>
+        <div class="t-row"><span class="t-label">去程费用</span><span class="t-val">约 260–350 元（约 100km）</span></div>
+        <div class="t-row"><span class="t-label">返程费用</span><span class="t-val">约 260–350 元（平谷叫车极难，须提前 1 小时预约）</span></div>
+        <div class="t-row"><span class="t-label">往返合计</span><span class="t-val"><b>约 520–700 元</b></span></div>
+        <hr class="t-divider"/>
+        <div class="t-pro">✓ 路程最远，不用自己开长途</div>
+        <div class="t-con">✗ 平谷偏远，返程几乎叫不到车</div>
+        <div class="t-con">✗ 费用接近租车，性价比低</div>
+        <div class="t-con">✗ 往返超过 4 小时在车上，宝宝很累</div>
+      </div>
+    </div>
+    <div class="t-opt t-rec">
+      <div class="t-head">🚗 租车方案 <span class="t-rec-tag">⭐ 必须租车</span></div>
+      <div class="t-rows">
+        <div class="t-row"><span class="t-label">推荐车型</span><span class="t-val">别克 GL8（7座），路程最远选最舒适的</span></div>
+        <div class="t-row"><span class="t-label">日租 + 险</span><span class="t-val">约 550–780 元</span></div>
+        <div class="t-row"><span class="t-label">油费</span><span class="t-val">约 120 元（往返约 200km）</span></div>
+        <div class="t-row"><span class="t-label">高速过路费</span><span class="t-val">约 60 元（往返，京承高速）</span></div>
+        <div class="t-row"><span class="t-label">GL8 合计</span><span class="t-val"><b>约 730–960 元</b>（4 人约 183–240 元/人）</span></div>
+        <hr class="t-divider"/>
+        <div class="t-pro">✓ 平谷叫车极困难，租车是唯一可靠选择</div>
+        <div class="t-pro">✓ GL8 第二排可放平，宝宝长途舒适睡觉</div>
+        <div class="t-pro">✓ 费用与打车相近，体验远胜</div>
+        <div class="t-warn" style="color:#e65100;font-size:.78rem;margin-top:4px">⚠️ 注意：往返约 200km，超出免费里程须补超公里费</div>
+      </div>
+    </div>
   </div>
 
   <div class="info-cols">
     <div class="info-col">
-      <h3><span class="icon">🎯</span> 游玩项目</h3>
+      <h3><span class="ic">🎯</span> 游玩项目</h3>
       <div class="tag-list">
         <span class="tag">🚢 双层环湖游船</span><span class="tag">🏝️ 登碧波岛打卡</span>
         <span class="tag">🏄 桨板 / 皮划艇</span><span class="tag">🚴 环湖骑行</span>
@@ -687,7 +552,7 @@
       </div>
     </div>
     <div class="info-col">
-      <h3><span class="icon">👶</span> 母婴配套</h3>
+      <h3><span class="ic">👶</span> 母婴配套</h3>
       <div class="tag-list">
         <span class="tag baby">🏛️ 游客中心标准母婴室</span>
         <span class="tag baby">🛣️ 全沥青平缓环湖路</span>
@@ -700,66 +565,25 @@
   </div>
 
   <div class="schedule">
-    <h3><span class="icon">📅</span> 详细时间规划</h3>
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-time">07:00</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🚗 从朱辛庄出发</div><div class="desc">走京承高速 → 平谷出口 → 金海湖方向，全程约 100 分钟；路最远，务必 7 点出发</div><span class="tip">⚠️ 四条线路中最远，绝对不能出发晚</span></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">08:40</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🅿️ 停车 · 买游船票</div><div class="desc">停车场免费，在主码头购双层游船票，首班通常 9:00，提前排队确认时间</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">08:40–09:00</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🚴 环湖骑行热身</div><div class="desc">等船期间沿湖骑行，沥青平路，宝宝坐座椅，看湖景暖场</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">09:00–10:30</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🚢 双层环湖游船 + 碧波岛登岛</div><div class="desc">游船约 1.5 小时，中途停靠碧波岛下船打卡，登高俯瞰金海湖全景</div><span class="tip">全程可坐船，宝宝不累</span></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">10:30–11:30</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🏄 桨板 / 皮划艇</div><div class="desc">水上活动 1 人轮流体验，1 人在岸边带娃玩沙；亦可亲子坐电瓶船替代</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">11:30–12:00</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🎣 湖边垂钓</div><div class="desc">景区提供租杆服务，湖边垂钓 30 分钟，老人小孩都爱</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">12:00–13:30</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🐟 农家湖鲜正餐</div><div class="desc">推荐清蒸鳜鱼 / 烤全鱼 / 生蚝，湖畔农家乐，性价比高</div><span class="tip">建议提前电话预订，周末易满座</span></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">13:30–15:00</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">💤 宝宝午睡 + 🫖 大人围炉煮茶</div><div class="desc">草坪天幕下宝宝躺睡，大人煮茶喝咖啡，遮阳草坪面积极大</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">15:00–16:00</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🛷 山地滑车 + 🥏 草坪飞盘</div><div class="desc">山地滑车刺激有趣（宝宝须大人抱坐），之后草坪飞盘收尾</div></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-time">16:00</div>
-        <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-        <div class="tl-content"><div class="title">🚗 返回朱辛庄</div><div class="desc">约 17:40 到家；路程最远，<strong>16:00 必须出发</strong>，否则赶上晚高峰</div><span class="tip">⚠️ 四条线路中最晚到家，节奏要紧凑</span></div>
-      </div>
+    <h3><span class="ic">📅</span> 详细时间规划</h3>
+    <div class="tl">
+      <div class="tli"><div class="tli-time">07:00</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🚗 从朱辛庄出发</div><div class="tli-desc">走京承高速 → 平谷出口 → 金海湖方向，全程约 100 分钟</div><span class="tli-warn">⚠️ 四条线路中最远，7:00 必须出发</span></div></div>
+      <div class="tli"><div class="tli-time">08:40</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🅿️ 停车 · 买游船票</div><div class="tli-desc">主码头购双层游船票，首班通常 9:00，提前排队确认时间</div></div></div>
+      <div class="tli"><div class="tli-time">08:40–09:00</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🚴 环湖骑行热身</div><div class="tli-desc">等船期间沿湖骑行，全沥青平路，宝宝坐儿童座椅，看湖景</div></div></div>
+      <div class="tli"><div class="tli-time">09:00–10:30</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🚢 双层游船 + 碧波岛登岛</div><div class="tli-desc">游船约 1.5 小时，中途停靠碧波岛下船打卡，登高俯瞰金海湖全景</div><span class="tli-tip">全程可坐船，宝宝不累</span></div></div>
+      <div class="tli"><div class="tli-time">10:30–11:30</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🏄 桨板 / 皮划艇</div><div class="tli-desc">1 人轮流体验，1 人岸边带娃；亦可亲子坐电瓶船替代</div></div></div>
+      <div class="tli"><div class="tli-time">11:30–12:00</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🎣 湖边垂钓</div><div class="tli-desc">景区提供租杆，湖边垂钓 30 分钟，老人小孩都爱</div></div></div>
+      <div class="tli"><div class="tli-time">12:00–13:30</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🐟 农家湖鲜正餐</div><div class="tli-desc">推荐清蒸鳜鱼 / 烤全鱼，湖畔农家乐，性价比高</div><span class="tli-warn">⚠️ 建议提前电话预订，周末易满座</span></div></div>
+      <div class="tli"><div class="tli-time">13:30–15:00</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">💤 宝宝午睡 + 🫖 围炉煮茶</div><div class="tli-desc">天幕下宝宝躺睡，大人煮茶，遮阳草坪面积极大</div></div></div>
+      <div class="tli"><div class="tli-time">15:00–16:00</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🛷 山地滑车 + 🥏 草坪飞盘</div><div class="tli-desc">山地滑车刺激有趣（宝宝须大人抱坐），草坪飞盘收尾</div></div></div>
+      <div class="tli"><div class="tli-time">16:00</div><div class="tli-dc"><div class="tli-dot"></div><div class="tli-line"></div></div><div class="tli-body"><div class="tli-title">🚗 返回朱辛庄</div><div class="tli-desc">约 17:40 到家</div><span class="tli-warn">⚠️ 16:00 必须出发，否则赶上晚高峰</span></div></div>
     </div>
   </div>
 </div>
 
 <footer>
-  <p>📍 出发地：北京市昌平区朱辛庄 &nbsp;|&nbsp; 📸 图片来源：visitbeijing.com.cn</p>
+  <p>📍 出发地：北京市昌平区朱辛庄 &nbsp;·&nbsp; 📸 图片来源：visitbeijing.com.cn</p>
   <p style="margin-top:8px">祝出行愉快！🎉</p>
 </footer>
-
 </body>
 </html>
